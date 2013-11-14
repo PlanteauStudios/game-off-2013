@@ -16,11 +16,8 @@ public class WallToggle : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	    if (toggler) {
-            Debug.Log("Timer = " + timer.ToString());
             if (timer >= frequency) {
-                Debug.Log("Timer passed fre");
                 if (Vector3.Distance(player.transform.position, wall.transform.position) > min_distance) {
-                    Debug.Log("flipping a ctive");
                     wall.renderer.enabled = !wall.renderer.enabled;
                     wall.collider.enabled = !wall.collider.enabled;
                 }
