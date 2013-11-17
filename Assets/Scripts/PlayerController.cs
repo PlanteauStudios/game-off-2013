@@ -12,28 +12,34 @@ public class PlayerController : MonoBehaviour {
 		// _win_text.text = "";
 	}
     void OnGUI() {
+        Vector3 movement = new Vector3(0.0f, 0.0f, 0.0f);
+        Quaternion rot = Quaternion.identity;
+        rot.eulerAngles = new Vector3(270.0f, 0.0f, 0.0f);
+        KeyCode key = _last_key;
         if (Input.anyKeyDown) {
-            KeyCode key = Event.current.keyCode;
-            if (key != _last_key) {
-                _last_key = key;
-                Vector3 movement = new Vector3(0.0f, 0.0f, 0.0f);
-                switch (_last_key) {
-                    case KeyCode.LeftArrow:
-                        movement.Set(-1, 0.0f, 0);
-                        break;
-                    case KeyCode.RightArrow:
-                        movement.Set(1, 0.0f, 0);
-                        break;
-                    case KeyCode.UpArrow:
-                        movement.Set(0.0f, 0.0f, 1.0f);
-                        break;
-                    case KeyCode.DownArrow:
-                        movement.Set(0.0f, 0.0f, -1.0f);
-                        break;
-                }
-                rigidbody.velocity = movement * _speed;
-            }
+            key = Event.current.keyCode;
         }
+        _last_key = key;
+        switch (_last_key) {
+            case KeyCode.LeftArrow:
+                movement.Set(-1, 0.0f, 0);
+                rot.eulerAngles = new Vector3(270.0f,270.0f ,0.0f);
+                break;
+            case KeyCode.RightArrow:
+                movement.Set(1, 0.0f, 0);
+                rot.eulerAngles = new Vector3(270.0f,90.0f, 0.0f);
+                break;
+            case KeyCode.UpArrow:
+                movement.Set(0.0f, 0.0f, 1.0f);
+                rot.eulerAngles = new Vector3(270.0f,0.0f, 0.0f);
+                break;
+            case KeyCode.DownArrow:
+                movement.Set(0.0f, 0.0f, -1.0f);
+                rot.eulerAngles = new Vector3(270.0f,180.0f, 0.0f);
+                break;
+        }
+        rigidbody.velocity = movement * _speed;
+        rigidbody.rotation = rot;
     }
 	void OnTriggerEnter(Collider other) {
 		//Destroy(other.gameObject);
