@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour {
         _movement_script = GetComponent<Movement>();
 	}
     void OnGUI() {
-        Vector3 movement = new Vector3(0.0f, 0.0f, 0.0f);
+        Vector3 movement = Vector3.zero;
         Quaternion rot = Quaternion.identity;
         rot.eulerAngles = new Vector3(270.0f, 0.0f, 0.0f);
         KeyCode key = _last_key;
