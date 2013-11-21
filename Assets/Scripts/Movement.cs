@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using System;
 public class Movement : MonoBehaviour { 
     public enum Direction { Left, Right, Up, Down };
     public Vector3 MoveDirection(Direction d) {
@@ -28,6 +28,15 @@ public class Movement : MonoBehaviour {
                 return new Vector3(270.0f,180.0f, 0.0f);
         }
         return new Vector3(270.0f, 0.0f, 0.0f);
+    }
+    public Direction MovingIn(Vector3 v) {
+        bool hori = Math.Abs(v.x) >= Math.Abs(v.z);
+        if (hori) {
+            if (v.x > 0) return Direction.Right;
+            return Direction.Left;
+        }
+        if (v.z > 0) return Direction.Up;
+        return Direction.Down;
     }
 
 }
