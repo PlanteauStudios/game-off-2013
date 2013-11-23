@@ -11,7 +11,7 @@ public class NodeScorer : MonoBehaviour {
     public GameObject Cell;
     private List<List<GameObject> > _cells;
 
-    public GameObject _target
+    public GameObject _target;
 
     void Start() {
         _manager = GetComponent<GridManager>();
