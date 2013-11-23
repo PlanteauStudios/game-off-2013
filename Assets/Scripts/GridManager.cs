@@ -7,12 +7,14 @@ public class GridManager: MonoBehaviour
     public GameObject Cell;
     //This time instead of specifying the number of cells you should just drop your ground game object on this public variable
     public GameObject Ground;
- 
+    
     private float cellWidth;
     private float cellHeight;
     private float groundWidth;
     private float groundHeight;
-    public List<List<GameObject> > _cells = new List<List<GameObject> >();
+    private int _base_score = 50;
+    public List<List<Pair<GameObject, int> > > _cells = new List<List<Pair<GameObject, int> > >();
+    
     void setSizes()
     {
         cellWidth = Cell.renderer.bounds.size.x;
@@ -60,7 +62,7 @@ public class GridManager: MonoBehaviour
  
         for (float y = 0; y < gridSize.y; y++)
         {
-            List<GameObject> current_list = new List<GameObject>();
+            List<Pair<GameObject, int> > current_list = new List<Pair<GameObject, int> >();
             float sizeX = gridSize.x;
             for (float x = 0; x < sizeX; x++)
             {
@@ -68,7 +70,7 @@ public class GridManager: MonoBehaviour
                 Vector2 gridPos = new Vector2(x, y);
                 cell.transform.position = calcWorldCoord(gridPos);
                 cell.transform.parent = cellGridGO.transform;
-                current_list.Add(cell);
+                current_list.Add(new Pair<GameObject, int>(cell, _base_score));
             }
             _cells.Add(current_list);
         }
