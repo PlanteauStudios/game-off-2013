@@ -13,7 +13,7 @@ public class GridManager: MonoBehaviour
     private float groundWidth;
     private float groundHeight;
     private int _base_score = 50;
-    public List<List<Pair<GameObject, int> > > _cells = new List<List<Pair<GameObject, int> > >();
+    public CellGrid _cells = new CellGrid();
     
     void setSizes()
     {
@@ -62,7 +62,7 @@ public class GridManager: MonoBehaviour
  
         for (float y = 0; y < gridSize.y; y++)
         {
-            List<Pair<GameObject, int> > current_list = new List<Pair<GameObject, int> >();
+            List<CollabCell > current_list = new List<CollabCell >();
             float sizeX = gridSize.x;
             for (float x = 0; x < sizeX; x++)
             {
@@ -70,7 +70,9 @@ public class GridManager: MonoBehaviour
                 Vector2 gridPos = new Vector2(x, y);
                 cell.transform.position = calcWorldCoord(gridPos);
                 cell.transform.parent = cellGridGO.transform;
-                current_list.Add(new Pair<GameObject, int>(cell, _base_score));
+                CellPassthrough cell_pass = cell.GetComponent<CellPassthrough>();
+                int score = cell_pass.CanPass() ? _base_score : -50000;
+                current_list.Add(new CollabCell(cell, score));
             }
             _cells.Add(current_list);
         }
