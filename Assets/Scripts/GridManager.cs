@@ -12,7 +12,6 @@ public class GridManager: MonoBehaviour
     private float cellHeight;
     private float groundWidth;
     private float groundHeight;
-    private int _base_score = 50;
     public CellGrid _cells = new CellGrid();
     
     void setSizes()
@@ -71,8 +70,9 @@ public class GridManager: MonoBehaviour
                 cell.transform.position = calcWorldCoord(gridPos);
                 cell.transform.parent = cellGridGO.transform;
                 CellPassthrough cell_pass = cell.GetComponent<CellPassthrough>();
-                int score = cell_pass.CanPass() ? _base_score : -50000;
-                current_list.Add(new CollabCell(cell, score));
+                int score = cell_pass.CanPass() ? CollabCell.BASE_SCORE : CollabCell.IMPASS_SCORE;
+                CollabCell store_cell = new CollabCell(cell, score, cell_pass.CanPass());
+                current_list.Add(store_cell);
             }
             _cells.Add(current_list);
         }
@@ -82,5 +82,7 @@ public class GridManager: MonoBehaviour
     {
         setSizes();
         createGrid();
+        
     }
+
 }

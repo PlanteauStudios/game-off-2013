@@ -17,10 +17,10 @@ public class NodeScorer : MonoBehaviour {
     Vector2 Pos(GameObject g) {
         return new Vector2(g.rigidbody.position.x, g.rigidbody.position.z);
     }
-    GameObject GetCellAt(Vector2 location) {
+    public GameObject GetCellAt(Vector2 location) {
         return GetCellAt(location, 0, _cells.Count(), 0, _cells._cells[_cells.Count()].Count);
     }
-    GameObject GetCellAt(Vector2 location, int x_low, int x_high, int y_high, int y_low) {
+    public GameObject GetCellAt(Vector2 location, int x_low, int x_high, int y_high, int y_low) {
         int x_mid = (x_high - x_low) / 2,
             y_mid = (y_low - y_high) / 2;
         if (Pos(_cells._cells[x_mid][y_mid]._cell) == location) 
@@ -42,8 +42,15 @@ public class NodeScorer : MonoBehaviour {
         return GetCellAt( location, xes.first, xes.second, yes.first, yes.second);
     }
 
-    void GenerateScores() {
-
+    void GenerateScores(GameObject target) {
+        for (int i = 0; i < _cells.Count(); ++i) {
+            for (int j = 0; j < _cells.InnerCount(); ++j) {
+                if (target.rigidbody.position == _cells._cells[i][j].Pos())
+                    _cells.SetScore(i, j, CollabCell.MAX_SCORE, 0);
+                else 
+                    _cells.SetSimpleScore(i, j, CollabCell.BASE_SCORE);
+            }
+        }
     }
 
 }

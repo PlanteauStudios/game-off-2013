@@ -17,6 +17,26 @@ public class CellGrid {
     public int Count() {
         return _cells.Count;
     }
+    public int InnerCount() {
+        return _cells[0].Count;
+    }
+    public Vector3 Coord(int x, int y) {
+        return _cells[x][y].Pos();
+    }
+    public void SetSimpleScore(int x, int y, int score) {
+        _cells[x][y]._score = score;
+    }
+    public void SetScore(int x, int y, int score, int distance) {
+        if (x > Count()) x = _cells.Count - 1;
+        if (y > InnerCount()) y = InnerCount() - 1;
+        if (!_cells[x][y]._pass || distance >= RADIUS || _cells[x][y]._score >= score) return;
+
+        _cells[x][y]._score = score;
+        SetScore(x + 1, y, Movement.Direction.Left, score - 1, distance + 1);
+        SetScore(x - 1, y, Movement.Direction.Right, score - 1, distance + 1);
+        SetScore(x, y - 1, Movement.Direction.Down, score - 1, distance + 1);
+        SetScore(x, y + 1, Movement.Direction.Up, score - 1, distance + 1);
+    }
     public void SetScore(int x, int y, Movement.Direction d, int score, int distance) {
         if (!_cells[x][y]._pass || distance >= RADIUS || _cells[x][y]._score >= score) return;
 
@@ -27,6 +47,9 @@ public class CellGrid {
         if (d != Movement.Direction.Down) SetScore(x, y + 1, Movement.Direction.Up, score - 1, distance + 1);
     }
     public int ScoreInDirection(int x, int y, Movement.Direction d) {
+        if (x >= Count() || y >= _cells[x].Count) {
+            return CollabCell.IMPASS_SCORE;
+        }
         int x_dir = 0, y_dir = 0;
         switch (d) {
             case Movement.Direction.Left:
@@ -41,6 +64,9 @@ public class CellGrid {
             case Movement.Direction.Down:
                 y_dir = -1;
                 break;
+        }
+        if (x + x_dir < 0 || y + y_dir < 0)  {
+            return CollabCell.IMPASS_SCORE;
         }
         return _cells[x + x_dir][y + y_dir]._score;
     }
