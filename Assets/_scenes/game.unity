@@ -35943,7 +35943,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 967520530}
   m_Layer: 0
-  m_Name: CellGrid
+  m_Name: asdasdas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56865,6 +56865,10 @@ Prefab:
     - target: {fileID: 101800, guid: 7ee417acef4895a488670d3035c66bc8, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 101800, guid: 7ee417acef4895a488670d3035c66bc8, type: 2}
+      propertyPath: m_Name
+      value: asdasdas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7ee417acef4895a488670d3035c66bc8, type: 2}
