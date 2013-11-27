@@ -12,14 +12,29 @@ public class GhostAI : MonoBehaviour {
         _movement_script = GetComponent<Movement>();
         _direction = Movement.Direction.Up;
     }
+    int Randomize() {
+        int ran = Random.Range(0, 3);
+        return ran;
+    }
+    void SwitchDirection(int dir) {
+        if (dir > 3) dir = 0;
+        Movement.Direction next_direction = (Movement.Direction)dir;//_direction;
+
+        if (next_direction == _direction)
+            SwitchDirection(dir + 1);
+        else {
+            _direction = next_direction;
+        }
+    }
+    void OnTriggerEnter(Collider other) {
+        if (other.gameObject.tag == "Floor") return;
     
+        SwitchDirection(Randomize());
+    }
     // Update is called once per frame
     void Update () {
         Quaternion rot = Quaternion.identity;
         rot.eulerAngles = new Vector3(270.0f, 0.0f, 0.0f);
-        Vector3 direct = _pacman.rigidbody.position - rigidbody.position;
-
-        _direction = _floor.GetComponent<GridManager>()._cells.BestDirection(0,0);//_movement_script.MovingIn(direct);
         rigidbody.velocity = _movement_script.MoveDirection(_direction) * _speed;
         rot.eulerAngles = _movement_script.FaceDirection(_direction);
         rigidbody.rotation = rot;
