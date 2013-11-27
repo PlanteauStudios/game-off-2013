@@ -20,10 +20,10 @@ public class PacManAI : MonoBehaviour {
         Vector3 player_pos = _player.rigidbody.position;
 
         Vector3 direct = (player_pos - rigidbody.position) * .25f;
-        _direction = _movement_script.MovingIn(direct);
-        rigidbody.velocity = _movement_script.MoveDirection(_direction) * _speed;
+        _direction = Movement.MovingIn(direct);
+        rigidbody.velocity = Movement.MoveDirection(_direction) * _speed;
         Quaternion rot = Quaternion.identity;
-        rot.eulerAngles = _movement_script.FaceDirection(_direction);
+        rot.eulerAngles = Movement.FaceDirection(_direction);
         rigidbody.rotation = rot;
 	}
 }

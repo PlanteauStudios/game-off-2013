@@ -6,14 +6,12 @@ public class PlayerController : MonoBehaviour {
 	public GUIText _count_text, _win_text;
 	private int _count;
 	private KeyCode _last_key;
-    private Movement _movement_script;
 
 
 	void Start() {
 		_count = 0;
 		SetCountText();
 		_win_text.text = "";
-        _movement_script = GetComponent<Movement>();
 	}
     void OnGUI() {
         Vector3 movement = Vector3.zero;
@@ -26,20 +24,20 @@ public class PlayerController : MonoBehaviour {
         _last_key = key;
         switch (_last_key) {
             case KeyCode.LeftArrow:
-                movement = _movement_script.MoveDirection(Movement.Direction.Left);
-                rot.eulerAngles = _movement_script.FaceDirection(Movement.Direction.Left);
+                movement = Movement.MoveDirection(Movement.Direction.Left);
+                rot.eulerAngles = Movement.FaceDirection(Movement.Direction.Left);
                 break;
             case KeyCode.RightArrow:
-                movement = _movement_script.MoveDirection(Movement.Direction.Right);
-                rot.eulerAngles = _movement_script.FaceDirection(Movement.Direction.Right);
+                movement = Movement.MoveDirection(Movement.Direction.Right);
+                rot.eulerAngles = Movement.FaceDirection(Movement.Direction.Right);
                 break;
             case KeyCode.UpArrow:
-                movement = _movement_script.MoveDirection(Movement.Direction.Up);
-                rot.eulerAngles = _movement_script.FaceDirection(Movement.Direction.Up);
+                movement = Movement.MoveDirection(Movement.Direction.Up);
+                rot.eulerAngles = Movement.FaceDirection(Movement.Direction.Up);
                 break;
             case KeyCode.DownArrow:
-                movement = _movement_script.MoveDirection(Movement.Direction.Down);
-                rot.eulerAngles = _movement_script.FaceDirection(Movement.Direction.Down);
+                movement = Movement.MoveDirection(Movement.Direction.Down);
+                rot.eulerAngles = Movement.FaceDirection(Movement.Direction.Down);
                 break;
         }
         rigidbody.velocity = movement * _speed;
@@ -56,9 +54,9 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void SetCountText() {
-		_count_text.text = "Count: " + _count.ToString();		
+		_count_text.text = "Count: " + _count.ToString();
 		if (_count >= 9) {
-			_win_text.text = "You Win!";	
+			_win_text.text = "You Win!";
 		}
 	}
 }

@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
-public class Movement : MonoBehaviour { 
-    public enum Direction { Left, Right, Up, Down };
-    public Vector3 MoveDirection(Direction d) {
+public class Movement : MonoBehaviour {
+    public enum Direction { Up = 0, Down = 1, Left = 2, Right = 3 };
+    public static Vector3 MoveDirection(Direction d) {
         switch (d) {
             case Direction.Left :
                 return Vector3.left;
@@ -16,7 +16,7 @@ public class Movement : MonoBehaviour {
         }
         return Vector3.zero;
     }
-    public Vector3 FaceDirection(Direction d) {
+    public static Vector3 FaceDirection(Direction d) {
         switch (d) {
             case Direction.Left :
                 return new Vector3(270.0f,0.0f ,0.0f);
@@ -29,7 +29,7 @@ public class Movement : MonoBehaviour {
         }
         return new Vector3(270.0f, 0.0f, 0.0f);
     }
-    public Direction MovingIn(Vector3 v) {
+    public static Direction MovingIn(Vector3 v) {
         bool hori = Math.Abs(v.x) >= Math.Abs(v.z);
         if (hori) {
             if (v.x > 0) return Direction.Right;
