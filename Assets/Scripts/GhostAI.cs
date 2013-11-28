@@ -3,12 +3,10 @@ using System.Collections;
 
 public class GhostAI : MonoBehaviour {
     public float _speed;
-    private Movement _movement_script;
     private Movement.Direction _direction;
     public GameObject _pacman, _floor;
 
     void Start () {
-        _movement_script = GetComponent<Movement>();
         _direction = Movement.Direction.Up;
     }
     int Randomize() {

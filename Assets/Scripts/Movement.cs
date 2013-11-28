@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
-public class Movement : MonoBehaviour {
+public class Movement {
     public enum Direction { Up = 0, Down = 1, Left = 2, Right = 3 };
     public static Vector3 MoveDirection(Direction d) {
         switch (d) {
