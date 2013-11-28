@@ -4,22 +4,41 @@ using System.Collections;
 public class PacManAI : MonoBehaviour {
     enum State { Explore, Hunt, Hide };
     public float _speed;
+
+    public GUIText _score_text, _win_text;
+    public int _score;
     private Movement.Direction _direction;
     public GameObject _player;
+
+    private const int STARTING_SCORE = 50;
+    private const int PELLET_POINTS = 5;
 	// Use this for initialization
 	void Start () {
         _direction = Movement.Direction.Up;
+        _score = STARTING_SCORE;
 	}
 
 	// Update is called once per frame
-	void Update () {
-        Vector3 player_pos = _player.rigidbody.position;
 
-        Vector3 direct = (player_pos - rigidbody.position) * .25f;
-        _direction = Movement.MovingIn(direct);
+    void OnCollisionEnter(Collision other) {
+        if (other.collider.gameObject.tag == "Floor") return;
+        Movement.SwitchDirection(Movement.Randomize(), 0, transform.position, ref _direction);
+        if (other.collider.gameObject.tag == "Pellet") {
+            other.collider.gameObject.SetActive(false);
+            _score -= PELLET_POINTS;
+        }
+    }
+    void SetCountText() {
+        _score_text.text = "Score: " + _score.ToString();
+        if (_score <= 0) {
+            _win_text.text = "You Lose!";
+        }
+    }
+    void Update () {
+        // Quaternion rot = Quaternion.identity;
+        // rot.eulerAngles = new Vector3(270.0f, 0.0f, 0.0f);
         rigidbody.velocity = Movement.MoveDirection(_direction) * _speed;
-        Quaternion rot = Quaternion.identity;
-        rot.eulerAngles = Movement.FaceDirection(_direction);
-        rigidbody.rotation = rot;
-	}
+        // rot.eulerAngles = Movement.FaceDirection(_direction);
+        // rigidbody.rotation = rot;
+    }
 }
