@@ -2,7 +2,7 @@
 using System.Collections;
 using System;
 public class Movement {
-    public enum Direction { Up = 0, Down = 1, Left = 2, Right = 3 };
+    public enum Direction { Up = 0, Down = 1, Left = 2, Right = 3 , Stand = -1 };
     public static int Randomize() {
         int ran = UnityEngine.Random.Range(0, 3);
         return ran;
@@ -17,6 +17,8 @@ public class Movement {
                 return Vector3.forward;
             case Direction.Down :
                 return Vector3.back;
+            case Direction.Stand :
+                return Vector3.zero;
         }
         return Vector3.zero;
     }
@@ -30,6 +32,8 @@ public class Movement {
                 return new Vector3(270.0f,90.0f, 0.0f);
             case Direction.Down :
                 return new Vector3(270.0f,270.0f, 0.0f);
+            case Direction.Stand :
+                return new Vector3(270.0f, 90.0f, 0.0f);
         }
         return new Vector3(270.0f, 0.0f, 0.0f);
     }

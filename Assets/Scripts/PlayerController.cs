@@ -7,14 +7,15 @@ public class PlayerController : MonoBehaviour {
 	private int _count;
 	private KeyCode _last_key;
 
-
+    private Movement.Direction _direction;
 	void Start() {
 		_count = 0;
 		SetCountText();
 		_win_text.text = "";
+        _direction = Movement.Direction.Stand;
 	}
     void OnGUI() {
-        Vector3 movement = Vector3.zero;
+        Vector3 move = Vector3.zero;
         Quaternion rot = Quaternion.identity;
         rot.eulerAngles = new Vector3(270.0f, 0.0f, 0.0f);
         KeyCode key = _last_key;
@@ -22,26 +23,28 @@ public class PlayerController : MonoBehaviour {
             key = Event.current.keyCode;
         }
         _last_key = key;
+        Movement.Direction d = Movement.Direction.Up;
         switch (_last_key) {
             case KeyCode.LeftArrow:
-                movement = Movement.MoveDirection(Movement.Direction.Left);
-                rot.eulerAngles = Movement.FaceDirection(Movement.Direction.Left);
+                d = Movement.Direction.Left;
                 break;
             case KeyCode.RightArrow:
-                movement = Movement.MoveDirection(Movement.Direction.Right);
-                rot.eulerAngles = Movement.FaceDirection(Movement.Direction.Right);
+                d = Movement.Direction.Right;
                 break;
             case KeyCode.UpArrow:
-                movement = Movement.MoveDirection(Movement.Direction.Up);
-                rot.eulerAngles = Movement.FaceDirection(Movement.Direction.Up);
+                d = Movement.Direction.Up;
                 break;
             case KeyCode.DownArrow:
-                movement = Movement.MoveDirection(Movement.Direction.Down);
-                rot.eulerAngles = Movement.FaceDirection(Movement.Direction.Down);
+                d = Movement.Direction.Down;
                 break;
         }
-        rigidbody.velocity = movement * _speed;
-        rigidbody.rotation = rot;
+        if (!Movement.CollisionIn(d, transform.position)) {
+            _direction = d;
+        }
+        move = Movement.MoveDirection(_direction);
+        rot.eulerAngles = Movement.FaceDirection(_direction);
+            rigidbody.velocity = move * _speed;
+            rigidbody.rotation = rot;
     }
 
 
