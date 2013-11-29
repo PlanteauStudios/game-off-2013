@@ -82,6 +82,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 15
+  _ghost_start: {fileID: 0}
   _pacman: {fileID: 0}
   _floor: {fileID: 0}
   _delayed_start: 0
@@ -89,6 +90,7 @@ MonoBehaviour:
   _pen_exit: {fileID: 0}
   _normal_form: {fileID: 0}
   _vulnerable_form: {fileID: 0}
+  VULNERABLE_TIMER: 100
   _starting_position: 1
   _starting_area: 1
 --- !u!114 &11400002
