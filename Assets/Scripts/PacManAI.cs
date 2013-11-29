@@ -16,16 +16,23 @@ public class PacManAI : MonoBehaviour {
 	void Start () {
         _direction = Movement.Direction.Up;
         _score = STARTING_SCORE;
+        SetCountText();
 	}
 
 	// Update is called once per frame
 
     void OnCollisionEnter(Collision other) {
         if (other.collider.gameObject.tag == "Floor") return;
-        Movement.SwitchDirection(Movement.Randomize(), 0, transform.position, ref _direction);
-        if (other.collider.gameObject.tag == "Pellet") {
-            other.collider.gameObject.SetActive(false);
+        Debug.Log("coll" + other.collider.gameObject.tag);
+        if (other.collider.gameObject.tag != "Pellet") {
+            Movement.SwitchDirection(Movement.Randomize(), 0, transform.position, ref _direction);
+        }
+    }
+    void OnTriggerEnter(Collider other) {
+         if (other.gameObject.tag == "Pellet") {
+            other.gameObject.SetActive(false);
             _score -= PELLET_POINTS;
+            SetCountText();
         }
     }
     void SetCountText() {
@@ -35,10 +42,10 @@ public class PacManAI : MonoBehaviour {
         }
     }
     void Update () {
-        // Quaternion rot = Quaternion.identity;
-        // rot.eulerAngles = new Vector3(270.0f, 0.0f, 0.0f);
+        Quaternion rot = Quaternion.identity;
+        rot.eulerAngles = new Vector3(270.0f, 0.0f, 0.0f);
         rigidbody.velocity = Movement.MoveDirection(_direction) * _speed;
-        // rot.eulerAngles = Movement.FaceDirection(_direction);
-        // rigidbody.rotation = rot;
+        rot.eulerAngles = Movement.FaceDirection(_direction);
+        rigidbody.rotation = rot;
     }
 }

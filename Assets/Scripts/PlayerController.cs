@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour {
     private Movement.Direction _direction;
 	void Start() {
 		_count = 0;
-		SetCountText();
 		_win_text.text = "";
         _direction = Movement.Direction.Stand;
 	}
@@ -48,18 +47,5 @@ public class PlayerController : MonoBehaviour {
     }
 
 
-	void OnTriggerEnter(Collider other) {
-		if (other.gameObject.tag == "pickup") {
-			other.gameObject.SetActive(false);
-			++_count;
-			SetCountText();
-		}
-	}
 
-	void SetCountText() {
-		_count_text.text = "Count: " + _count.ToString();
-		if (_count >= 9) {
-			_win_text.text = "You Win!";
-		}
-	}
 }
