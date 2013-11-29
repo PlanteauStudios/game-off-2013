@@ -13,7 +13,7 @@ public class GhostAI : MonoBehaviour {
 
     public GameObject _normal_form, _vulnerable_form;
     private bool _vulnerable = false, _flash_on = false;
-    public int VULNERABLE_TIMER = 20;
+    public int VULNERABLE_TIMER;
     private int _vulnerable_timer = 0, _vulnerable_flash_counter = 0;
 
     public bool _starting_position = true, _starting_area = true;
@@ -99,7 +99,6 @@ public class GhostAI : MonoBehaviour {
                 ++_vulnerable_timer;
             } else {
                 _vulnerable = false;
-                _vulnerable_timer = 0;
                 _normal_form.SetActive(true);
                 _vulnerable_form.SetActive(false);
             }
