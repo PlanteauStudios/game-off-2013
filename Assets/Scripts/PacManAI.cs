@@ -9,9 +9,12 @@ public class PacManAI : MonoBehaviour {
     public int _score;
     private Movement.Direction _direction;
     public GameObject _player;
+    public GameObject _pacman_start;
 
     private const int STARTING_SCORE = 50;
     private const int PELLET_POINTS = 5;
+    private const int ROBOT_GHOST_POINTS = 5;
+    private const int PERSON_GHOST_POINTS = 10;
 	// Use this for initialization
 	void Start () {
         _direction = Movement.Direction.Up;
@@ -23,9 +26,14 @@ public class PacManAI : MonoBehaviour {
 
     void OnCollisionEnter(Collision other) {
         if (other.collider.gameObject.tag == "Floor") return;
-        Debug.Log("coll" + other.collider.gameObject.tag);
         if (other.collider.gameObject.tag != "Pellet") {
-            Movement.SwitchDirection(Movement.Randomize(), 0, transform.position, ref _direction);
+            string other_tag = other.collider.gameObject.tag;
+            if (other_tag == "Ghost" || other_tag == "Player") {
+                Debug.Log("nomnomnom");
+                _score += other_tag == "Ghost" ? ROBOT_GHOST_POINTS : PERSON_GHOST_POINTS;
+                SetCountText();
+                transform.position = _pacman_start.transform.position;
+            }
         }
     }
     void OnTriggerEnter(Collider other) {
@@ -33,6 +41,13 @@ public class PacManAI : MonoBehaviour {
             other.gameObject.SetActive(false);
             _score -= PELLET_POINTS;
             SetCountText();
+        } else if (other.gameObject.tag == "Pen Gate") {
+            if (_direction == Movement.Direction.Down) {
+                _direction = Movement.Direction.Left;
+                Debug.Log("Getaway from exit");
+            }
+        } else {
+                Movement.SwitchDirection(Movement.Randomize(), 0, transform.position, ref _direction);
         }
     }
     void SetCountText() {
@@ -41,7 +56,7 @@ public class PacManAI : MonoBehaviour {
             _win_text.text = "You Lose!";
         }
     }
-    void Update () {
+    void FixedUpdate () {
         Quaternion rot = Quaternion.identity;
         rot.eulerAngles = new Vector3(270.0f, 0.0f, 0.0f);
         rigidbody.velocity = Movement.MoveDirection(_direction) * _speed;
