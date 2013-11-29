@@ -56,6 +56,12 @@ public class Movement {
             ret = true;
         return ret;
     }
+    public static void Reverse(ref Direction d) {
+        if (d == Direction.Left) d = Direction.Right;
+        if (d == Direction.Right) d = Direction.Left;
+        if (d == Direction.Up) d = Direction.Down;
+        if (d == Direction.Down) d = Direction.Up;
+    }
     public static void SwitchDirection(int dir, int depth, Vector3 current_position, ref Direction current_direction) {
         if (depth > 50) return;
         if (dir > 3) dir = 0;
@@ -74,7 +80,8 @@ public class Movement {
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit,5f)) {
-            return true;
+            if (hit.collider.tag == "Wall")
+                return true;
         }
         return false;
     }
