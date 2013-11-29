@@ -13,7 +13,7 @@ public class GhostAI : MonoBehaviour {
 
     public GameObject _normal_form, _vulnerable_form;
     private bool _vulnerable = false, _flash_on = false;
-    public int VULNERABLE_TIMER = 20000;
+    public int VULNERABLE_TIMER = 20;
     private int _vulnerable_timer = 0, _vulnerable_flash_counter = 0;
 
     public bool _starting_position = true, _starting_area = true;
@@ -81,10 +81,14 @@ public class GhostAI : MonoBehaviour {
         rot.eulerAngles = Movement.FaceDirection(_direction);
         rigidbody.rotation = rot;
     }
-
+    public void Reset() {
+        _starting_position = true; _starting_area = true;
+    }
     public void SetVulnerable() {
         _vulnerable = true;
         _vulnerable_timer =0;
+        _normal_form.SetActive(false);
+        _vulnerable_form.SetActive(true);
     }
     public bool IsVulnerable() {
         return _vulnerable;
@@ -92,21 +96,10 @@ public class GhostAI : MonoBehaviour {
     void Update() {
         if (_vulnerable) {
             if (_vulnerable_timer <= VULNERABLE_TIMER) {
-                Debug.Log("EEP i'm scared");
-                if (_vulnerable_flash_counter >= 3) {
-                    _normal_form.SetActive(!_flash_on);
-                    _vulnerable_form.SetActive(_flash_on);
-                    _flash_on = !_flash_on;
-                    _vulnerable_flash_counter = 0;
-                }
-                ++_vulnerable_flash_counter;
                 ++_vulnerable_timer;
             } else {
-                Debug.Log("not vulerable anymore");
                 _vulnerable = false;
                 _vulnerable_timer = 0;
-
-                _vulnerable_flash_counter = 0;
                 _normal_form.SetActive(true);
                 _vulnerable_form.SetActive(false);
             }

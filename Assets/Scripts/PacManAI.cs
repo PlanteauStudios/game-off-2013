@@ -13,8 +13,8 @@ public class PacManAI : MonoBehaviour {
     public GameObject _pacman_start;
     public GameObject _ghosts;
 
-    private const int STARTING_SCORE = 50;
-    private const int PELLET_POINTS = 5;
+    private const int STARTING_SCORE = 500;
+    private const int PELLET_POINTS = 1;
     private const int ROBOT_GHOST_POINTS = 5;
     private const int PERSON_GHOST_POINTS = 10;
 
