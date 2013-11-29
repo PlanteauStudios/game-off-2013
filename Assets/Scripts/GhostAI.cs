@@ -3,12 +3,19 @@ using System.Collections;
 
 public class GhostAI : MonoBehaviour {
     public float _speed;
+    public GameObject _ghost_start;
+
     private Movement.Direction _direction;
     public GameObject _pacman, _floor;
-
     public int _delayed_start;
     private int _wait = 0;
     public GameObject _pen_mid, _pen_exit;
+
+    public GameObject _normal_form, _vulnerable_form;
+    private bool _vulnerable = false, _flash_on = false;
+    public int VULNERABLE_TIMER = 20000;
+    private int _vulnerable_timer = 0, _vulnerable_flash_counter = 0;
+
     public bool _starting_position = true, _starting_area = true;
     void Start () {
         _direction = Movement.Direction.Up;
@@ -53,6 +60,7 @@ public class GhostAI : MonoBehaviour {
         }
     }
     void FixedUpdate () {
+        AnimateVulnerable();
         if (_wait <= _delayed_start) {
             ++_wait;
             return;
@@ -73,4 +81,38 @@ public class GhostAI : MonoBehaviour {
         rot.eulerAngles = Movement.FaceDirection(_direction);
         rigidbody.rotation = rot;
     }
+
+    public void SetVulnerable() {
+        _vulnerable = true;
+        _vulnerable_timer =0;
+    }
+    public bool IsVulnerable() {
+        return _vulnerable;
+    }
+    void Update() {
+        if (_vulnerable) {
+            if (_vulnerable_timer <= VULNERABLE_TIMER) {
+                Debug.Log("EEP i'm scared");
+                if (_vulnerable_flash_counter >= 3) {
+                    _normal_form.SetActive(!_flash_on);
+                    _vulnerable_form.SetActive(_flash_on);
+                    _flash_on = !_flash_on;
+                    _vulnerable_flash_counter = 0;
+                }
+                ++_vulnerable_flash_counter;
+                ++_vulnerable_timer;
+            } else {
+                Debug.Log("not vulerable anymore");
+                _vulnerable = false;
+                _vulnerable_timer = 0;
+
+                _vulnerable_flash_counter = 0;
+                _normal_form.SetActive(true);
+                _vulnerable_form.SetActive(false);
+            }
+        }
+    }
+    public void AnimateVulnerable() {
+    }
+
 }

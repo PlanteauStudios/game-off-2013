@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PacManAI : MonoBehaviour {
     enum State { Explore, Hunt, Hide };
+
     public float _speed;
 
     public GUIText _score_text, _win_text;
@@ -10,6 +11,7 @@ public class PacManAI : MonoBehaviour {
     private Movement.Direction _direction;
     public GameObject _player;
     public GameObject _pacman_start;
+    public GameObject _ghosts;
 
     private const int STARTING_SCORE = 50;
     private const int PELLET_POINTS = 5;
@@ -20,6 +22,7 @@ public class PacManAI : MonoBehaviour {
     private int _mouth_flip_counter = 0;
     public GameObject _open_face;
     public GameObject _closed_face;
+
 
 	// Use this for initialization
 	void Start () {
@@ -35,10 +38,15 @@ public class PacManAI : MonoBehaviour {
         if (other.collider.gameObject.tag != "Pellet") {
             string other_tag = other.collider.gameObject.tag;
             if (other_tag == "Ghost" || other_tag == "Player") {
-                Debug.Log("nomnomnom");
-                _score += other_tag == "Ghost" ? ROBOT_GHOST_POINTS : PERSON_GHOST_POINTS;
-                SetCountText();
-                transform.position = _pacman_start.transform.position;
+                GhostAI g_ai = other.collider.gameObject.GetComponent<GhostAI>();
+                if (g_ai.IsVulnerable()) {
+                    _score -= other_tag == "Ghost" ? ROBOT_GHOST_POINTS : PERSON_GHOST_POINTS;
+                    other.transform.position = g_ai._ghost_start.transform.position;
+                } else {
+                    _score += other_tag == "Ghost" ? ROBOT_GHOST_POINTS : PERSON_GHOST_POINTS;
+                    transform.position = _pacman_start.transform.position;
+                }
+                    SetCountText();
             }
         }
     }
@@ -47,10 +55,17 @@ public class PacManAI : MonoBehaviour {
             other.gameObject.SetActive(false);
             _score -= PELLET_POINTS;
             SetCountText();
+        } else if (other.gameObject.tag == "Super Pellet") {
+            Transform[] ghosts = _ghosts.GetComponentsInChildren<Transform>();
+            foreach (Transform g in ghosts) {
+                if (g.gameObject.tag != "Ghost") continue;
+                GhostAI g_ai = g.gameObject.GetComponent<GhostAI>();
+                g_ai.SetVulnerable();
+                other.gameObject.SetActive(false);
+            }
         } else if (other.gameObject.tag == "Pen Gate") {
             if (_direction == Movement.Direction.Down) {
                 _direction = Movement.Direction.Left;
-                Debug.Log("Getaway from exit");
             }
         } else {
                 Movement.SwitchDirection(Movement.Randomize(), 0, transform.position, ref _direction);
