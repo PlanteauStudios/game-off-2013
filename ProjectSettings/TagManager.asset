@@ -6,6 +6,8 @@ TagManager:
   - Wall
   - Floor
   - Pellet
+  - Pen Mid
+  - Pen Exit
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
