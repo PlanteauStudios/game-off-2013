@@ -15,6 +15,12 @@ public class PacManAI : MonoBehaviour {
     private const int PELLET_POINTS = 5;
     private const int ROBOT_GHOST_POINTS = 5;
     private const int PERSON_GHOST_POINTS = 10;
+
+    private bool _open_mouth = false;
+    private int _mouth_flip_counter = 0;
+    public GameObject _open_face;
+    public GameObject _closed_face;
+
 	// Use this for initialization
 	void Start () {
         _direction = Movement.Direction.Up;
@@ -62,5 +68,14 @@ public class PacManAI : MonoBehaviour {
         rigidbody.velocity = Movement.MoveDirection(_direction) * _speed;
         rot.eulerAngles = Movement.FaceDirection(_direction);
         rigidbody.rotation = rot;
+    }
+    void Update() {
+        ++_mouth_flip_counter;
+        if (_mouth_flip_counter >= 5) {
+            _closed_face.SetActive(!_open_mouth);
+            _open_face.SetActive(_open_mouth);
+            _open_mouth = !_open_mouth;
+            _mouth_flip_counter = 0;
+        }
     }
 }
