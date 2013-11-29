@@ -10784,12 +10784,12 @@ MonoBehaviour:
   _ghost_start: {fileID: 664778671}
   _pacman: {fileID: 943379748}
   _floor: {fileID: 1494009291}
-  _delayed_start: 0
+  _delayed_start: 75
   _pen_mid: {fileID: 751206923}
   _pen_exit: {fileID: 869205587}
   _normal_form: {fileID: 1941727466}
   _vulnerable_form: {fileID: 1860999690}
-  VULNERABLE_TIMER: 20000
+  VULNERABLE_TIMER: 100
   _starting_position: 1
   _starting_area: 1
 --- !u!114 &295083318
@@ -18767,7 +18767,7 @@ MonoBehaviour:
   _pen_exit: {fileID: 869205587}
   _normal_form: {fileID: 1545065410}
   _vulnerable_form: {fileID: 1095346579}
-  VULNERABLE_TIMER: 20000
+  VULNERABLE_TIMER: 100
   _starting_position: 1
   _starting_area: 1
 --- !u!65 &500294817
@@ -24121,11 +24121,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b4421e7c4c5de854cad0a5e30d291270, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 1.50000083
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b4421e7c4c5de854cad0a5e30d291270, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 6.81202364
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b4421e7c4c5de854cad0a5e30d291270, type: 2}
       propertyPath: m_LocalRotation.x
@@ -24149,6 +24149,38 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: b4421e7c4c5de854cad0a5e30d291270, type: 2}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: b4421e7c4c5de854cad0a5e30d291270, type: 2}
+      propertyPath: _ghost_start
+      value: 
+      objectReference: {fileID: 664778671}
+    - target: {fileID: 11400000, guid: b4421e7c4c5de854cad0a5e30d291270, type: 2}
+      propertyPath: _pacman
+      value: 
+      objectReference: {fileID: 943379748}
+    - target: {fileID: 11400000, guid: b4421e7c4c5de854cad0a5e30d291270, type: 2}
+      propertyPath: _floor
+      value: 
+      objectReference: {fileID: 1494009291}
+    - target: {fileID: 11400000, guid: b4421e7c4c5de854cad0a5e30d291270, type: 2}
+      propertyPath: _pen_mid
+      value: 
+      objectReference: {fileID: 751206923}
+    - target: {fileID: 11400000, guid: b4421e7c4c5de854cad0a5e30d291270, type: 2}
+      propertyPath: _pen_exit
+      value: 
+      objectReference: {fileID: 869205587}
+    - target: {fileID: 11400000, guid: b4421e7c4c5de854cad0a5e30d291270, type: 2}
+      propertyPath: _normal_form
+      value: 
+      objectReference: {fileID: 2032540918}
+    - target: {fileID: 11400000, guid: b4421e7c4c5de854cad0a5e30d291270, type: 2}
+      propertyPath: _vulnerable_form
+      value: 
+      objectReference: {fileID: 151260235}
+    - target: {fileID: 100000, guid: b4421e7c4c5de854cad0a5e30d291270, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -27512,6 +27544,10 @@ Prefab:
       propertyPath: _vulnerable_form
       value: 
       objectReference: {fileID: 119868233}
+    - target: {fileID: 11400000, guid: b4421e7c4c5de854cad0a5e30d291270, type: 2}
+      propertyPath: _delayed_start
+      value: 125
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4421e7c4c5de854cad0a5e30d291270, type: 2}
   m_RootGameObject: {fileID: 837788814}
@@ -32295,12 +32331,12 @@ MonoBehaviour:
   _ghost_start: {fileID: 664778671}
   _pacman: {fileID: 943379748}
   _floor: {fileID: 1494009291}
-  _delayed_start: 0
+  _delayed_start: 125
   _pen_mid: {fileID: 751206923}
   _pen_exit: {fileID: 869205587}
   _normal_form: {fileID: 420715482}
   _vulnerable_form: {fileID: 119868233}
-  VULNERABLE_TIMER: 20000
+  VULNERABLE_TIMER: 100
   _starting_position: 1
   _starting_area: 1
 --- !u!65 &837788817
@@ -36082,7 +36118,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 943379748}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: -.707106829}
-  m_LocalPosition: {x: 0, y: 1.9875592, z: -15.001255}
+  m_LocalPosition: {x: 0, y: 2.35760736, z: -15.001255}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 83768634}
@@ -36125,7 +36161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951b5d635f6274544b4806faf5855f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 15
+  _speed: 20
   _score_text: {fileID: 768346287}
   _win_text: {fileID: 368599145}
   _score: 0
@@ -38043,7 +38079,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1004258060}
   m_Layer: 0
-  m_Name: pacman_start
+  m_Name: pacman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38056,7 +38092,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1004258059}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.74714088, y: .069288969, z: -15.8180027}
+  m_LocalPosition: {x: 0, y: 1.13506222, z: -15.3950748}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 292006008}
@@ -38952,6 +38988,10 @@ Prefab:
       propertyPath: _vulnerable_form
       value: 
       objectReference: {fileID: 1860999690}
+    - target: {fileID: 11400000, guid: b4421e7c4c5de854cad0a5e30d291270, type: 2}
+      propertyPath: _delayed_start
+      value: 75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4421e7c4c5de854cad0a5e30d291270, type: 2}
   m_RootGameObject: {fileID: 295083313}
@@ -40079,7 +40119,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1063702531
 Transform:
   m_ObjectHideFlags: 0
@@ -40087,7 +40127,7 @@ Transform:
   m_PrefabInternal: {fileID: 626827086}
   m_GameObject: {fileID: 1063702530}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: -.707106829}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: 0, y: 1.50000083, z: 6.81202364}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2032540919}
@@ -40132,15 +40172,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 15
-  _ghost_start: {fileID: 0}
-  _pacman: {fileID: 0}
-  _floor: {fileID: 0}
+  _ghost_start: {fileID: 664778671}
+  _pacman: {fileID: 943379748}
+  _floor: {fileID: 1494009291}
   _delayed_start: 0
-  _pen_mid: {fileID: 0}
-  _pen_exit: {fileID: 0}
-  _normal_form: {fileID: 0}
-  _vulnerable_form: {fileID: 0}
-  VULNERABLE_TIMER: 20000
+  _pen_mid: {fileID: 751206923}
+  _pen_exit: {fileID: 869205587}
+  _normal_form: {fileID: 2032540918}
+  _vulnerable_form: {fileID: 151260235}
+  VULNERABLE_TIMER: 100
   _starting_position: 1
   _starting_area: 1
 --- !u!114 &1063702535
