@@ -8,6 +8,7 @@ public class PacManAI : MonoBehaviour {
 
     public GUIText _score_text, _win_text;
     public int _score;
+    public int _lives;
     private Movement.Direction _direction;
     public GameObject _player;
     public GameObject _pacman_start;
@@ -45,6 +46,7 @@ public class PacManAI : MonoBehaviour {
                 } else {
                     _score += other_tag == "Ghost" ? ROBOT_GHOST_POINTS : PERSON_GHOST_POINTS;
                     transform.position = _pacman_start.transform.position;
+                    --_lives;
                 }
                     SetCountText();
             }
@@ -73,8 +75,12 @@ public class PacManAI : MonoBehaviour {
     }
     void SetCountText() {
         _score_text.text = "Score: " + _score.ToString();
-        if (_score <= 0) {
-            _win_text.text = "You Lose!";
+
+        if (_lives <= 0) {
+            _win_text.text = "You Win! Final Score is : " + _score.ToString();
+            Time.timeScale = 0f;
+        } else {
+            _win_text.text = "";
         }
     }
     void FixedUpdate () {
