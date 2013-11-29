@@ -18,28 +18,28 @@ public class GhostAI : MonoBehaviour {
         // Debug.Log("Bump");
         // rigidbody.velocity = Vector3.zero;
         if (other.collider.gameObject.tag == "Floor") return;
+
+        if (other.collider.gameObject.tag == "Ghost")
+            Movement.Reverse(ref _direction);
     }
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Pellet") return;
         if (other.gameObject.tag == "Pen Mid") {
             _starting_position = false;
         } else if (other.gameObject.tag == "Pen Exit") {
-            Debug.Log("hit the exit");
             _starting_area = false;
             if (_direction == Movement.Direction.Down) {
                 _direction = Movement.Direction.Left;
-                Debug.Log("Getaway from exit");
             } else if (_direction == Movement.Direction.Up) {
                 _direction = Movement.Direction.Right;
-                Debug.Log("Getaway from exit");
             }
         } else if (other.gameObject.tag == "Pen Gate") {
             if (_direction == Movement.Direction.Down) {
                 _direction = Movement.Direction.Left;
-                Debug.Log("Getaway from exit");
             }
+        } else if (other.gameObject.tag == "Ghost") {
+            Movement.Reverse(ref _direction);
         } else {
-            Debug.Log("bump");
             Movement.SwitchDirection(Movement.Randomize(), 0, transform.position, ref _direction);
         }
     }
@@ -47,8 +47,9 @@ public class GhostAI : MonoBehaviour {
         if (other.gameObject.tag == "Pen Gate") {
             if (_direction == Movement.Direction.Down) {
                 _direction = Movement.Direction.Left;
-                Debug.Log("Getaway from exit");
             }
+        } else if (other.gameObject.tag == "Ghost") {
+            Movement.Reverse(ref _direction);
         }
     }
     void FixedUpdate () {
@@ -62,7 +63,6 @@ public class GhostAI : MonoBehaviour {
         } else if(_starting_area) {
             _direction = transform.position.z < _pen_exit.transform.position.z ?
                 Movement.Direction.Up: Movement.Direction.Down;
-                Debug.Log("away from teh starting area");
         }
 
         Quaternion rot = Quaternion.identity;
@@ -72,7 +72,5 @@ public class GhostAI : MonoBehaviour {
         rigidbody.velocity = Movement.MoveDirection(_direction) * _speed;
         rot.eulerAngles = Movement.FaceDirection(_direction);
         rigidbody.rotation = rot;
-        Debug.Log("Ghosty X " + rigidbody.velocity.x + ", Y, " +  rigidbody.velocity.y
-            + " Z" + rigidbody.velocity.z);
     }
 }
