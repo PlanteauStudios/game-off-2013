@@ -11,7 +11,7 @@ public class Startup : MonoBehaviour {
                 GUITexture g = t.gameObject.GetComponent<GUITexture>();
                 // g.transform.position = new Vector3(-130f + 20 * count, -35.5f, -35.5f);
                 g.transform.position = new Vector3(0f, 0f, 0f);
-                g.pixelInset = new Rect(Screen.width - (80 + count * 75), Screen.height - 75, 70, 70);//fullscreen;
+                g.pixelInset = new Rect(Screen.width - (60 + count * 75), Screen.height - 75, 50, 50);//fullscreen;5
                 ++count;
             }
         }
@@ -22,7 +22,7 @@ public class Startup : MonoBehaviour {
                 GUITexture g = t.gameObject.GetComponent<GUITexture>();
                 // g.transform.position = new Vector3(-130f + 20 * count, -35.5f, -35.5f);
                 g.transform.position = new Vector3(0f, 0f, 0f);
-                g.pixelInset = new Rect(Screen.width - (80 + count * 75), Screen.height - 160, 70, 70);//fullscreen;
+                g.pixelInset = new Rect(Screen.width - (60 + count * 75), Screen.height - 160, 50, 50);//fullscreen;5
                 ++count;
             }
         }

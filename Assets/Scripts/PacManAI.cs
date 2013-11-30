@@ -50,6 +50,8 @@ public class PacManAI : MonoBehaviour {
                         PlayerController pc = other.collider.gameObject.GetComponent<PlayerController>();
                         pc.LoseLife();
                     }
+                    AudioSource death_sound = other.collider.gameObject.GetComponent<AudioSource>();
+                    death_sound.Play();
                     other.transform.position = g_ai._ghost_start.transform.position;
                 } else {
                     _score -= other_tag == "Ghost" ? ROBOT_GHOST_POINTS : PERSON_GHOST_POINTS;
@@ -101,7 +103,7 @@ public class PacManAI : MonoBehaviour {
         _score_text.text = _score.ToString();
 
         if (_lives <= 0) {
-            _win_text.text = "Congratulations!";
+            _win_text.text = "You Win!\r\nPacman Only Got " + _score.ToString() + " points!";
             Time.timeScale = 0f;
         } else {
             _win_text.text = "";

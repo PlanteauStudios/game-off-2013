@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour {
     }
     void SetCountText() {
         if (_lives <= 0) {
-            _win_text.text = "Game Over You Lose";
+            _win_text.text = "Game Over";
             Time.timeScale = 0f;
         } else {
             _win_text.text = "";
