@@ -2,9 +2,8 @@
 using System.Collections;
 public class Startup : MonoBehaviour {
     public GameObject _life_icons;
-    private Rect fullscreen;
+    public GameObject _score_title, _score_number;
 	void OnGUI () {
-        fullscreen = new Rect (0, 0, Screen.width, Screen.height);
         Transform[] icons = _life_icons.GetComponentsInChildren<Transform>();
         int count = 0;
         foreach(Transform t in icons) {

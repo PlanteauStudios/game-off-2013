@@ -20,7 +20,7 @@ public class PacManAI : MonoBehaviour {
     public int _delayed_start;
     private int _wait = 0;
 
-    private const int STARTING_SCORE = 500;
+    private const int STARTING_SCORE = 0;
     private const int PELLET_POINTS = 1;
     private const int ROBOT_GHOST_POINTS = 5;
     private const int PERSON_GHOST_POINTS = 10;
@@ -48,7 +48,7 @@ public class PacManAI : MonoBehaviour {
                     _score -= other_tag == "Ghost" ? ROBOT_GHOST_POINTS : PERSON_GHOST_POINTS;
                     other.transform.position = g_ai._ghost_start.transform.position;
                 } else {
-                    _score += other_tag == "Ghost" ? ROBOT_GHOST_POINTS : PERSON_GHOST_POINTS;
+                    _score -= other_tag == "Ghost" ? ROBOT_GHOST_POINTS : PERSON_GHOST_POINTS;
                     transform.position = _pacman_start.transform.position;
                     if (other_tag == "Player") LoseLife();
                 }
@@ -59,12 +59,12 @@ public class PacManAI : MonoBehaviour {
     void OnTriggerEnter(Collider other) {
          if (other.gameObject.tag == "Pellet") {
             other.gameObject.SetActive(false);
-            _score -= PELLET_POINTS;
+            _score += PELLET_POINTS;
             SetCountText();
         } else if (other.gameObject.tag == "Super Pellet") {
             Transform[] ghosts = _ghosts.GetComponentsInChildren<Transform>();
             foreach (Transform g in ghosts) {
-                if (g.gameObject.tag != "Ghost") continue;
+                if (g.gameObject.tag != "Ghost" && g.gameObject.tag != "Player") continue;
                 GhostAI g_ai = g.gameObject.GetComponent<GhostAI>();
                 g_ai.SetVulnerable();
                 other.gameObject.SetActive(false);
@@ -93,10 +93,11 @@ public class PacManAI : MonoBehaviour {
         }
     }
     void SetCountText() {
-        _score_text.text = "Score: " + _score.ToString();
+        if (_score < 0) _score = 0;
+        _score_text.text = _score.ToString();
 
         if (_lives <= 0) {
-            _win_text.text = "You Win! Final Score is : " + _score.ToString();
+            _win_text.text = "Congratulations!";
             Time.timeScale = 0f;
         } else {
             _win_text.text = "";

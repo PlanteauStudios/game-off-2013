@@ -16,18 +16,22 @@ public class GhostAI : MonoBehaviour {
     public int VULNERABLE_TIMER;
     private int _vulnerable_timer = 0, _vulnerable_flash_counter = 0;
 
+    public bool _player;
+
     public bool _starting_position = true, _starting_area = true;
     void Start () {
         _direction = Movement.Direction.Up;
     }
 
     void OnCollisionEnter(Collision other) {
+        if (_player) return;
         if (other.collider.gameObject.tag == "Floor") return;
 
         if (other.collider.gameObject.tag == "Ghost")
             Movement.Reverse(ref _direction);
     }
     void OnTriggerEnter(Collider other) {
+        if (_player) return;
         if (other.gameObject.tag == "Pellet") return;
         if (other.gameObject.tag == "Pen Mid") {
             _starting_position = false;
@@ -49,6 +53,7 @@ public class GhostAI : MonoBehaviour {
         }
     }
     void OnTriggerStay(Collider other) {
+        if (_player) return;
         if (other.gameObject.tag == "Pen Gate") {
             if (_direction == Movement.Direction.Down) {
                 _direction = Movement.Direction.Left;
@@ -59,6 +64,7 @@ public class GhostAI : MonoBehaviour {
     }
     void FixedUpdate () {
         AnimateVulnerable();
+        if (_player) return;
         if (_wait <= _delayed_start) {
             ++_wait;
             return;

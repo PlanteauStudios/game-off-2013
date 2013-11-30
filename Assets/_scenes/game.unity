@@ -1908,6 +1908,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0caca470040ce844eb6a1a19ba100103, type: 2}
+      propertyPath: m_TagString
+      value: Super Pellet
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0caca470040ce844eb6a1a19ba100103, type: 2}
   m_RootGameObject: {fileID: 1495209621}
@@ -3087,7 +3091,7 @@ GameObject:
   - 23: {fileID: 81620361}
   m_Layer: 0
   m_Name: Big pellet
-  m_TagString: Pellet
+  m_TagString: Super Pellet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6614,7 +6618,7 @@ GameObject:
   - 23: {fileID: 179579029}
   m_Layer: 0
   m_Name: Big pellet
-  m_TagString: Pellet
+  m_TagString: Super Pellet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10790,6 +10794,7 @@ MonoBehaviour:
   _normal_form: {fileID: 1941727466}
   _vulnerable_form: {fileID: 1860999690}
   VULNERABLE_TIMER: 100
+  _player: 0
   _starting_position: 1
   _starting_area: 1
 --- !u!114 &295083318
@@ -13720,7 +13725,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 368599143}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .351421356, y: .68239212, z: 0}
+  m_LocalPosition: {x: .5, y: .5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2139133039}
@@ -13733,7 +13738,7 @@ GUIText:
   m_Enabled: 1
   serializedVersion: 3
   m_Text: CONGRATULATIONS!
-  m_Anchor: 0
+  m_Anchor: 4
   m_Alignment: 1
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
@@ -18744,6 +18749,7 @@ MonoBehaviour:
   _normal_form: {fileID: 1545065410}
   _vulnerable_form: {fileID: 1095346579}
   VULNERABLE_TIMER: 100
+  _player: 0
   _starting_position: 1
   _starting_area: 1
 --- !u!65 &500294817
@@ -24125,7 +24131,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: b4421e7c4c5de854cad0a5e30d291270, type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: b4421e7c4c5de854cad0a5e30d291270, type: 2}
       propertyPath: _ghost_start
@@ -24162,6 +24168,10 @@ Prefab:
     - target: {fileID: 100000, guid: b4421e7c4c5de854cad0a5e30d291270, type: 2}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: b4421e7c4c5de854cad0a5e30d291270, type: 2}
+      propertyPath: _player
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4421e7c4c5de854cad0a5e30d291270, type: 2}
@@ -27049,7 +27059,7 @@ GUIText:
   m_Text: SCORE
   m_Anchor: 0
   m_Alignment: 0
-  m_PixelOffset: {x: 180, y: -25}
+  m_PixelOffset: {x: 40, y: -25}
   m_LineSpacing: 1
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: 467cfda7a04856649906f79729d7950b, type: 3}
@@ -29369,7 +29379,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 768346285}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.931048393, y: -17.591301, z: -8.55944633}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2139133039}
@@ -29384,7 +29394,7 @@ GUIText:
   m_Text: 150
   m_Anchor: 0
   m_Alignment: 0
-  m_PixelOffset: {x: -60.2000008, y: -10}
+  m_PixelOffset: {x: 80, y: -80}
   m_LineSpacing: 1
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: 467cfda7a04856649906f79729d7950b, type: 3}
@@ -32413,6 +32423,7 @@ MonoBehaviour:
   _normal_form: {fileID: 420715482}
   _vulnerable_form: {fileID: 119868233}
   VULNERABLE_TIMER: 100
+  _player: 0
   _starting_position: 1
   _starting_area: 1
 --- !u!65 &837788817
@@ -34676,7 +34687,7 @@ GameObject:
   - 23: {fileID: 910262549}
   m_Layer: 0
   m_Name: Big pellet
-  m_TagString: Pellet
+  m_TagString: Super Pellet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40337,7 +40348,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 626827086}
   m_GameObject: {fileID: 1063702530}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3bc92658c23f9594b86a51a6698cd20a, type: 3}
   m_Name: 
@@ -40352,6 +40363,7 @@ MonoBehaviour:
   _normal_form: {fileID: 2032540918}
   _vulnerable_form: {fileID: 151260235}
   VULNERABLE_TIMER: 100
+  _player: 1
   _starting_position: 1
   _starting_area: 1
 --- !u!114 &1063702535
@@ -55752,6 +55764,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _life_icons: {fileID: 1259480617}
+  _score_title: {fileID: 709386294}
+  _score_number: {fileID: 768346285}
 --- !u!114 &1494009297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55778,7 +55792,7 @@ GameObject:
   - 23: {fileID: 1495209623}
   m_Layer: 0
   m_Name: Big pellet
-  m_TagString: Pellet
+  m_TagString: Super Pellet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68592,6 +68606,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0caca470040ce844eb6a1a19ba100103, type: 2}
+      propertyPath: m_TagString
+      value: Super Pellet
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0caca470040ce844eb6a1a19ba100103, type: 2}
   m_RootGameObject: {fileID: 81620360}
@@ -69677,6 +69695,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0caca470040ce844eb6a1a19ba100103, type: 2}
+      propertyPath: m_TagString
+      value: Super Pellet
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0caca470040ce844eb6a1a19ba100103, type: 2}
   m_RootGameObject: {fileID: 179579027}
@@ -69716,6 +69738,10 @@ Prefab:
     - target: {fileID: 400000, guid: 0caca470040ce844eb6a1a19ba100103, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0caca470040ce844eb6a1a19ba100103, type: 2}
+      propertyPath: m_TagString
+      value: Super Pellet
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0caca470040ce844eb6a1a19ba100103, type: 2}
