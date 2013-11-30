@@ -1873,6 +1873,52 @@ Prefab:
   m_RootGameObject: {fileID: 711594450}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &41847777
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 41847779}
+  - 131: {fileID: 41847778}
+  m_Layer: 0
+  m_Name: Life_1
+  m_TagString: Life
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!131 &41847778
+GUITexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 41847777}
+  m_Enabled: 1
+  m_Texture: {fileID: 2800000, guid: f95219166677eeb4f8ede87df38161b7, type: 3}
+  m_Color: {r: .5, g: .5, b: .5, a: .5}
+  m_PixelInset:
+    serializedVersion: 2
+    x: -131.100006
+    y: -35.5
+    width: 70
+    height: 70
+  m_LeftBorder: 0
+  m_RightBorder: 0
+  m_TopBorder: 0
+  m_BottomBorder: 0
+--- !u!4 &41847779
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 41847777}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.0350456238, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 4.27693558}
+  m_Children: []
+  m_Father: {fileID: 2097391576}
 --- !u!1001 &42514542
 Prefab:
   m_ObjectHideFlags: 0
@@ -25200,7 +25246,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 664778671}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .965698242, y: .228127241, z: -8.48806}
+  m_LocalPosition: {x: .965698242, y: 1.27613807, z: -8.48806}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 292006008}
@@ -32844,52 +32890,6 @@ Prefab:
   m_RootGameObject: {fileID: 1322906337}
   m_IsPrefabParent: 0
   m_IsExploded: 1
---- !u!1 &853755609
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 853755610}
-  - 131: {fileID: 853755611}
-  m_Layer: 0
-  m_Name: Life_1test
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &853755610
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 853755609}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .870000005, y: .870000005, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 2066350811}
---- !u!131 &853755611
-GUITexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 853755609}
-  m_Enabled: 1
-  m_Texture: {fileID: 2800000, guid: f95219166677eeb4f8ede87df38161b7, type: 3}
-  m_Color: {r: .5, g: .5, b: .5, a: .5}
-  m_PixelInset:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 70
-    height: 70
-  m_LeftBorder: 0
-  m_RightBorder: 0
-  m_TopBorder: 0
-  m_BottomBorder: 0
 --- !u!1 &855080127
 GameObject:
   m_ObjectHideFlags: 0
@@ -36294,7 +36294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951b5d635f6274544b4806faf5855f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 20
+  _speed: 25
   _score_text: {fileID: 768346287}
   _win_text: {fileID: 368599145}
   _score: 0
@@ -39760,6 +39760,52 @@ Prefab:
   m_RootGameObject: {fileID: 1397480767}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1041137239
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1041137240}
+  - 131: {fileID: 1041137241}
+  m_Layer: 0
+  m_Name: Life_3
+  m_TagString: Life
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1041137240
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1041137239}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .0705032349, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 4.27693558}
+  m_Children: []
+  m_Father: {fileID: 2097391576}
+--- !u!131 &1041137241
+GUITexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1041137239}
+  m_Enabled: 1
+  m_Texture: {fileID: 2800000, guid: f95219166677eeb4f8ede87df38161b7, type: 3}
+  m_Color: {r: .5, g: .5, b: .5, a: .5}
+  m_PixelInset:
+    serializedVersion: 2
+    x: -187.020004
+    y: -35.5
+    width: 70
+    height: 70
+  m_LeftBorder: 0
+  m_RightBorder: 0
+  m_TopBorder: 0
+  m_BottomBorder: 0
 --- !u!1 &1045046076
 GameObject:
   m_ObjectHideFlags: 0
@@ -40409,6 +40455,8 @@ MonoBehaviour:
   _speed: 15
   _count_text: {fileID: 768346287}
   _win_text: {fileID: 368599145}
+  _life_icons: {fileID: 2097391575}
+  _lives: 3
 --- !u!1001 &1070330774
 Prefab:
   m_ObjectHideFlags: 0
@@ -47693,7 +47741,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1259480618}
   m_Layer: 0
-  m_Name: Lives
+  m_Name: LivesPacman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55763,7 +55811,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 302a42655c62a3b4c8a4cd2270d50b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _life_icons: {fileID: 1259480617}
+  _life_icons: {fileID: 2097391575}
+  _pacman_life_icons: {fileID: 1259480617}
   _score_title: {fileID: 709386294}
   _score_number: {fileID: 768346285}
 --- !u!114 &1494009297
@@ -57553,6 +57602,52 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!1 &1545570396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1545570397}
+  - 131: {fileID: 1545570398}
+  m_Layer: 0
+  m_Name: Life_2
+  m_TagString: Life
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1545570397
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1545570396}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .0289003849, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 4.27693558}
+  m_Children: []
+  m_Father: {fileID: 2097391576}
+--- !u!131 &1545570398
+GUITexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1545570396}
+  m_Enabled: 1
+  m_Texture: {fileID: 2800000, guid: f95219166677eeb4f8ede87df38161b7, type: 3}
+  m_Color: {r: .5, g: .5, b: .5, a: .5}
+  m_PixelInset:
+    serializedVersion: 2
+    x: -180
+    y: -35.5
+    width: 70
+    height: 70
+  m_LeftBorder: 0
+  m_RightBorder: 0
+  m_TopBorder: 0
+  m_BottomBorder: 0
 --- !u!1001 &1546428367
 Prefab:
   m_ObjectHideFlags: 0
@@ -75366,33 +75461,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 3, z: 3}
   m_Center: {x: 5.96046448e-08, y: 0, z: -8.94069672e-08}
---- !u!1 &2066350810
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 2066350811}
-  m_Layer: 0
-  m_Name: Lives_2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &2066350811
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2066350810}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 853755610}
-  m_Father: {fileID: 0}
 --- !u!1 &2066377005
 GameObject:
   m_ObjectHideFlags: 0
@@ -77077,6 +77145,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 3, z: 3}
   m_Center: {x: 5.96046448e-08, y: 0, z: -8.94069672e-08}
+--- !u!1 &2097391575
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2097391576}
+  m_Layer: 0
+  m_Name: Lives
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2097391576
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2097391575}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .911542177, y: .940786362, z: -10.5548592}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 41847779}
+  - {fileID: 1545570397}
+  - {fileID: 1041137240}
+  m_Father: {fileID: 0}
 --- !u!1 &2097575516
 GameObject:
   m_ObjectHideFlags: 0

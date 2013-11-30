@@ -4,12 +4,13 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
 	public float _speed;
 	public GUIText _count_text, _win_text;
-	private int _count;
 	private KeyCode _last_key;
+
+    public GameObject _life_icons;
+    public int _lives;
 
     private Movement.Direction _direction;
 	void Start() {
-		_count = 0;
 		_win_text.text = "";
         _direction = Movement.Direction.Stand;
 	}
@@ -45,7 +46,28 @@ public class PlayerController : MonoBehaviour {
             rigidbody.velocity = move * _speed;
             rigidbody.rotation = rot;
     }
-
+    void SetCountText() {
+        if (_lives <= 0) {
+            _win_text.text = "Game Over You Lose";
+            Time.timeScale = 0f;
+        } else {
+            _win_text.text = "";
+        }
+    }
+    public void LoseLife() {//TODO code duplication, please don't shoot me
+        if (_lives > 0) {
+            Transform[] icons = _life_icons.GetComponentsInChildren<Transform>();
+            for (int i = icons.Length - 1; i >= 0; --i) {
+                if (icons[i].gameObject.tag == "Life") {
+                    if (icons[i].gameObject.activeInHierarchy) {
+                        icons[i].gameObject.SetActive(false);
+                        break;
+                    }
+                }
+            }
+            --_lives;
+        }
+    }
 
 
 }

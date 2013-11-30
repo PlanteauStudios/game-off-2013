@@ -12,9 +12,9 @@ public class GhostAI : MonoBehaviour {
     public GameObject _pen_mid, _pen_exit;
 
     public GameObject _normal_form, _vulnerable_form;
-    private bool _vulnerable = false, _flash_on = false;
+    private bool _vulnerable = false;
     public int VULNERABLE_TIMER;
-    private int _vulnerable_timer = 0, _vulnerable_flash_counter = 0;
+    private int _vulnerable_timer = 0;
 
     public bool _player;
 

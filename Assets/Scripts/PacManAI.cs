@@ -21,9 +21,9 @@ public class PacManAI : MonoBehaviour {
     private int _wait = 0;
 
     private const int STARTING_SCORE = 0;
-    private const int PELLET_POINTS = 1;
-    private const int ROBOT_GHOST_POINTS = 5;
-    private const int PERSON_GHOST_POINTS = 10;
+    private const int PELLET_POINTS = 5;
+    private const int ROBOT_GHOST_POINTS = 50;
+    private const int PERSON_GHOST_POINTS = 0;
 
     private bool _open_mouth = false;
     private int _mouth_flip_counter = 0;
@@ -44,8 +44,12 @@ public class PacManAI : MonoBehaviour {
             string other_tag = other.collider.gameObject.tag;
             if (other_tag == "Ghost" || other_tag == "Player") {
                 GhostAI g_ai = other.collider.gameObject.GetComponent<GhostAI>();
-                if (g_ai.IsVulnerable()) {
+                if (true || g_ai.IsVulnerable()) {
                     _score -= other_tag == "Ghost" ? ROBOT_GHOST_POINTS : PERSON_GHOST_POINTS;
+                    if (other_tag == "Player") {
+                        PlayerController pc = other.collider.gameObject.GetComponent<PlayerController>();
+                        pc.LoseLife();
+                    }
                     other.transform.position = g_ai._ghost_start.transform.position;
                 } else {
                     _score -= other_tag == "Ghost" ? ROBOT_GHOST_POINTS : PERSON_GHOST_POINTS;
