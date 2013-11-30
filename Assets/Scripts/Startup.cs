@@ -3,7 +3,7 @@ using System.Collections;
 public class Startup : MonoBehaviour {
     public GameObject _life_icons, _pacman_life_icons;
     public GameObject _score_title, _score_number;
-    public GameObject _pacman, _ghosts;
+    public GameObject _pacman, _ghosts, _pills, _big_pills;
     public GameObject _player_start_pos;
     private bool _finished = false;
 	void OnGUI () {
@@ -59,6 +59,18 @@ public class Startup : MonoBehaviour {
                     PlayerController pc = t.gameObject.GetComponent<PlayerController>();
                     pc.Reset();
                 }
+            }
+        }
+        Transform[] pills = _pills.GetComponentsInChildren<Transform>();
+        foreach (Transform t in pills) {
+            if (t.gameObject.tag == "Pellet") {
+                t.gameObject.SetActive(true);
+            }
+        }
+        Transform[] big_ills = _big_pills.GetComponentsInChildren<Transform>();
+        foreach (Transform t in big_ills) {
+            if (t.gameObject.tag == "Super Pellet") {
+                t.gameObject.SetActive(true);
             }
         }
         _finished = false;

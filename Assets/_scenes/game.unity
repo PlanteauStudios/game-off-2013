@@ -10437,12 +10437,12 @@ Transform:
   m_LocalPosition: {x: 0, y: 1.48370361, z: .671264648}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 360871799}
-  - {fileID: 1403191628}
-  - {fileID: 1002700013}
   - {fileID: 1177279925}
   - {fileID: 751206924}
   - {fileID: 869205589}
+  - {fileID: 360871799}
+  - {fileID: 1403191628}
+  - {fileID: 1002700013}
   - {fileID: 648120321}
   - {fileID: 664778672}
   - {fileID: 1004258060}
@@ -56313,6 +56313,8 @@ MonoBehaviour:
   _score_number: {fileID: 768346285}
   _pacman: {fileID: 943379748}
   _ghosts: {fileID: 1400291333}
+  _pills: {fileID: 2082805414}
+  _big_pills: {fileID: 1303945858}
   _player_start_pos: {fileID: 648120320}
 --- !u!114 &1494009297
 MonoBehaviour:
