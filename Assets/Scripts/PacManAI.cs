@@ -96,6 +96,8 @@ public class PacManAI : MonoBehaviour {
                     }
                 }
             }
+            AudioSource death_sound = GetComponent<AudioSource>();
+            death_sound.Play();
             --_lives;
         }
     }

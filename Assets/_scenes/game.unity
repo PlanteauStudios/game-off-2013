@@ -10840,7 +10840,7 @@ MonoBehaviour:
   _pen_exit: {fileID: 869205587}
   _normal_form: {fileID: 1941727466}
   _vulnerable_form: {fileID: 1860999690}
-  VULNERABLE_TIMER: 100
+  VULNERABLE_TIMER: 10000
   _player: 0
   _starting_position: 1
   _starting_area: 1
@@ -10916,7 +10916,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -13843,7 +13843,7 @@ GUIText:
   m_GameObject: {fileID: 368599143}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: CONGRATULATIONS!
+  m_Text: 
   m_Anchor: 4
   m_Alignment: 1
   m_PixelOffset: {x: 0, y: 0}
@@ -18855,7 +18855,7 @@ MonoBehaviour:
   _pen_exit: {fileID: 869205587}
   _normal_form: {fileID: 1545065410}
   _vulnerable_form: {fileID: 1095346579}
-  VULNERABLE_TIMER: 100
+  VULNERABLE_TIMER: 10000
   _player: 0
   _starting_position: 1
   _starting_area: 1
@@ -18957,7 +18957,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -25366,7 +25366,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 664778671}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .965698242, y: 2.11645103, z: -8.48806}
+  m_LocalPosition: {x: -5.96104622, y: 2.11645103, z: -8.48806}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 292006008}
@@ -28747,7 +28747,7 @@ Transform:
   m_PrefabInternal: {fileID: 1505138945}
   m_GameObject: {fileID: 751206923}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .357317924, y: 2.38544559, z: -7.91299438}
+  m_LocalPosition: {x: .00641608238, y: 2.38544559, z: -8.46664429}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 292006008}
@@ -28762,7 +28762,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: .25, y: .25, z: .25}
+  m_Size: {x: .25, y: 1, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &751751727
 GameObject:
@@ -29577,7 +29577,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: 467cfda7a04856649906f79729d7950b, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 0
+  m_FontSize: 45
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -32601,7 +32601,7 @@ MonoBehaviour:
   _pen_exit: {fileID: 869205587}
   _normal_form: {fileID: 420715482}
   _vulnerable_form: {fileID: 119868233}
-  VULNERABLE_TIMER: 100
+  VULNERABLE_TIMER: 10000
   _player: 0
   _starting_position: 1
   _starting_area: 1
@@ -33372,7 +33372,7 @@ Transform:
   m_GameObject: {fileID: 869205587}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1.12926245}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: .87500006, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 292006008}
 --- !u!1001 &869263417
@@ -36384,6 +36384,7 @@ GameObject:
   - 114: {fileID: 943379754}
   - 65: {fileID: 943379751}
   - 65: {fileID: 943379750}
+  - 82: {fileID: 943379756}
   m_Layer: 0
   m_Name: pacman
   m_TagString: Untagged
@@ -36486,7 +36487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951b5d635f6274544b4806faf5855f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 25
+  _speed: 20
   _score_text: {fileID: 768346287}
   _win_text: {fileID: 368599145}
   _score: 0
@@ -36498,6 +36499,64 @@ MonoBehaviour:
   _delayed_start: 50
   _open_face: {fileID: 1274351020}
   _closed_face: {fileID: 83768633}
+--- !u!82 &943379756
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 943379748}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: db8c23b24b62d06498b61d6cecbddf55, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 495.0495
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1001 &948589003
 Prefab:
   m_ObjectHideFlags: 0
@@ -40601,7 +40660,7 @@ MonoBehaviour:
   _pen_exit: {fileID: 869205587}
   _normal_form: {fileID: 2032540918}
   _vulnerable_form: {fileID: 151260235}
-  VULNERABLE_TIMER: 100
+  VULNERABLE_TIMER: 10000
   _player: 1
   _starting_position: 1
   _starting_area: 1
@@ -40693,7 +40752,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -45152,7 +45211,7 @@ Transform:
   m_PrefabInternal: {fileID: 1505138945}
   m_GameObject: {fileID: 1177279924}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.11973763, z: -3.8339653}
+  m_LocalPosition: {x: 0, y: 2.11973763, z: -3.65656805}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 292006008}
@@ -56462,6 +56521,22 @@ Prefab:
     - target: {fileID: 400004, guid: 86761a49eefd95e43804e763a0ad1725, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 86761a49eefd95e43804e763a0ad1725, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -8.46664429
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 86761a49eefd95e43804e763a0ad1725, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: .00641608238
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 86761a49eefd95e43804e763a0ad1725, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -3.65656805
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 86761a49eefd95e43804e763a0ad1725, type: 2}
+      propertyPath: m_LocalScale.x
+      value: .87500006
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 86761a49eefd95e43804e763a0ad1725, type: 2}
