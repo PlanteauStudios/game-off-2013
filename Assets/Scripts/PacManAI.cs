@@ -93,10 +93,10 @@ public class PacManAI : MonoBehaviour {
         }
     }
     void SetCountText() {
-        _score_text.text = "Score: " + _score.ToString();
+        _score_text.text = _score.ToString();
 
         if (_lives <= 0) {
-            _win_text.text = "You Win! Final Score is : " + _score.ToString();
+            _win_text.text = "Congratulations!";
             Time.timeScale = 0f;
         } else {
             _win_text.text = "";

@@ -13720,7 +13720,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 368599143}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .351421356, y: .68239212, z: 0}
+  m_LocalPosition: {x: .5, y: .5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2139133039}
@@ -13733,7 +13733,7 @@ GUIText:
   m_Enabled: 1
   serializedVersion: 3
   m_Text: CONGRATULATIONS!
-  m_Anchor: 0
+  m_Anchor: 4
   m_Alignment: 1
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
@@ -27049,7 +27049,7 @@ GUIText:
   m_Text: SCORE
   m_Anchor: 0
   m_Alignment: 0
-  m_PixelOffset: {x: 180, y: -25}
+  m_PixelOffset: {x: 40, y: -25}
   m_LineSpacing: 1
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: 467cfda7a04856649906f79729d7950b, type: 3}
@@ -29369,7 +29369,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 768346285}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.931048393, y: -17.591301, z: -8.55944633}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2139133039}
@@ -29384,7 +29384,7 @@ GUIText:
   m_Text: 150
   m_Anchor: 0
   m_Alignment: 0
-  m_PixelOffset: {x: -60.2000008, y: -10}
+  m_PixelOffset: {x: 80, y: -80}
   m_LineSpacing: 1
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: 467cfda7a04856649906f79729d7950b, type: 3}
@@ -55752,6 +55752,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _life_icons: {fileID: 1259480617}
+  _score_title: {fileID: 709386294}
+  _score_number: {fileID: 768346285}
 --- !u!114 &1494009297
 MonoBehaviour:
   m_ObjectHideFlags: 0
