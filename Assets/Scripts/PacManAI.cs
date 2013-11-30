@@ -53,6 +53,7 @@ public class PacManAI : MonoBehaviour {
                     AudioSource death_sound = other.collider.gameObject.GetComponent<AudioSource>();
                     death_sound.Play();
                     other.transform.position = g_ai._ghost_start.transform.position;
+                    g_ai.Reset();
                 } else {
                     _score -= other_tag == "Ghost" ? ROBOT_GHOST_POINTS : PERSON_GHOST_POINTS;
                     transform.position = _pacman_start.transform.position;
