@@ -68,6 +68,18 @@ public class PlayerController : MonoBehaviour {
             --_lives;
         }
     }
+    public void Reset() {
+        _lives = 3;
+        Transform[] icons = _life_icons.GetComponentsInChildren<Transform>();//TODO duplicate code God i'm awful at this
+        for (int i = icons.Length - 1; i >= 0; --i) {
+            if (icons[i].gameObject.tag == "Life") {
+                if (icons[i].gameObject.activeInHierarchy) {
+                    icons[i].gameObject.SetActive(true);
+                    break;
+                }
+            }
+        }
 
+    }
 
 }

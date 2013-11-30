@@ -10440,6 +10440,7 @@ Transform:
   - {fileID: 1177279925}
   - {fileID: 751206924}
   - {fileID: 869205589}
+  - {fileID: 648120321}
   - {fileID: 664778672}
   - {fileID: 1004258060}
   m_Father: {fileID: 0}
@@ -24650,6 +24651,32 @@ Prefab:
   m_RootGameObject: {fileID: 106906227}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &648120320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 648120321}
+  m_Layer: 0
+  m_Name: player_start
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &648120321
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 648120320}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.291732788, y: 2.1164515, z: 13.0425358}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 292006008}
 --- !u!1001 &649607859
 Prefab:
   m_ObjectHideFlags: 0
@@ -56187,6 +56214,9 @@ MonoBehaviour:
   _pacman_life_icons: {fileID: 1259480617}
   _score_title: {fileID: 709386294}
   _score_number: {fileID: 768346285}
+  _pacman: {fileID: 943379748}
+  _ghosts: {fileID: 1400291333}
+  _player_start_pos: {fileID: 648120320}
 --- !u!114 &1494009297
 MonoBehaviour:
   m_ObjectHideFlags: 0

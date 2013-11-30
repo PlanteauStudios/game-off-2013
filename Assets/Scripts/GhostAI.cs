@@ -90,6 +90,7 @@ public class GhostAI : MonoBehaviour {
     }
     public void Reset() {
         _starting_position = true; _starting_area = true;
+        _wait = 0;
     }
     public void SetVulnerable() {
         _vulnerable = true;

@@ -111,6 +111,8 @@ public class PacManAI : MonoBehaviour {
         if (_lives <= 0) {
             _win_text.text = "You Win!\r\nPacman Only Got " + _score.ToString() + " points!";
             Time.timeScale = 0f;
+            Startup start_up = _floor.GetComponent<Startup>();
+            start_up.SetFinished();
         } else {
             _win_text.text = "";
         }
@@ -134,5 +136,20 @@ public class PacManAI : MonoBehaviour {
             _open_mouth = !_open_mouth;
             _mouth_flip_counter = 0;
         }
+    }
+    public void Reset() {
+        _lives = 3;
+        _wait = 0;
+        _score = 0;
+        Transform[] icons = _life_icons.GetComponentsInChildren<Transform>();//TODO duplicate code here EW
+        for (int i = icons.Length - 1; i >= 0; --i) {
+            if (icons[i].gameObject.tag == "Life") {
+                if (icons[i].gameObject.activeInHierarchy) {
+                    icons[i].gameObject.SetActive(true);
+                    break;
+                }
+            }
+        }
+
     }
 }

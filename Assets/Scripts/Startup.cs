@@ -3,6 +3,9 @@ using System.Collections;
 public class Startup : MonoBehaviour {
     public GameObject _life_icons, _pacman_life_icons;
     public GameObject _score_title, _score_number;
+    public GameObject _pacman, _ghosts;
+    public GameObject _player_start_pos;
+    private bool _finished = false;
 	void OnGUI () {
         Transform[] icons = _life_icons.GetComponentsInChildren<Transform>();
         int count = 0;
@@ -26,7 +29,15 @@ public class Startup : MonoBehaviour {
                 ++count;
             }
         }
+        if (_finished) {
+            if (Input.anyKeyDown) {
+                ResetAll();
+            }
+        }
 	}
+    public void SetFinished() {
+        _finished = true;
+    }
     public void StartChomp() {
         AudioSource chomper = GetComponent<AudioSource>();
         chomper.Play();
@@ -34,5 +45,24 @@ public class Startup : MonoBehaviour {
     public void StopChomp() {
         AudioSource chomper = GetComponent<AudioSource>();
         chomper.Stop();
+    }
+    public void ResetAll() {
+        Time.timeScale = 1f;
+        PacManAI pacman_ai = _pacman.GetComponent<PacManAI>();
+        pacman_ai.Reset();
+        Transform[] ghosts = _ghosts.GetComponentsInChildren<Transform>();
+        foreach (Transform t in ghosts) {
+            if (t.gameObject.tag == "Ghost" || t.gameObject.tag == "Player") {
+                GhostAI gai = t.gameObject.GetComponent<GhostAI>();
+                gai.Reset();
+                if (t.gameObject.tag == "Player") {
+                    PlayerController pc = t.gameObject.GetComponent<PlayerController>();
+                    t.gameObject.transform.position = _player_start_pos.transform.position;
+                    pc.Reset();
+                } else
+                    t.gameObject.transform.position = gai._ghost_start.transform.position;
+            }
+        }
+        _finished = false;
     }
 }
