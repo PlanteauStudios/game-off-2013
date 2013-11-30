@@ -30,6 +30,7 @@ public class PacManAI : MonoBehaviour {
     public GameObject _open_face;
     public GameObject _closed_face;
 
+    public GameObject _floor;
 
 	void Start () {
         _direction = Movement.Direction.Up;
@@ -76,6 +77,8 @@ public class PacManAI : MonoBehaviour {
                 g_ai.SetVulnerable();
                 other.gameObject.SetActive(false);
             }
+            Startup start_up = _floor.GetComponent<Startup>();
+            start_up.StartChomp();
         } else if (other.gameObject.tag == "Pen Gate") {
             if (_direction == Movement.Direction.Down) {
                 _direction = Movement.Direction.Left;

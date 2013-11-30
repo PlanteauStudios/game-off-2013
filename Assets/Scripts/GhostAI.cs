@@ -108,6 +108,8 @@ public class GhostAI : MonoBehaviour {
                 _vulnerable = false;
                 _normal_form.SetActive(true);
                 _vulnerable_form.SetActive(false);
+                Startup start_up = _floor.GetComponent<Startup>();
+                start_up.StopChomp();
             }
         }
     }

@@ -27,4 +27,12 @@ public class Startup : MonoBehaviour {
             }
         }
 	}
+    public void StartChomp() {
+        AudioSource chomper = GetComponent<AudioSource>();
+        chomper.Play();
+    }
+    public void StopChomp() {
+        AudioSource chomper = GetComponent<AudioSource>();
+        chomper.Stop();
+    }
 }
