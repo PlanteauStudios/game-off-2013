@@ -3087,7 +3087,7 @@ GameObject:
   - 23: {fileID: 81620361}
   m_Layer: 0
   m_Name: Big pellet
-  m_TagString: Super Pellet
+  m_TagString: Pellet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6614,7 +6614,7 @@ GameObject:
   - 23: {fileID: 179579029}
   m_Layer: 0
   m_Name: Big pellet
-  m_TagString: Super Pellet
+  m_TagString: Pellet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12482,6 +12482,52 @@ Prefab:
   m_RootGameObject: {fileID: 1423893788}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &341870437
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 341870439}
+  - 131: {fileID: 341870438}
+  m_Layer: 0
+  m_Name: Life_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!131 &341870438
+GUITexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 341870437}
+  m_Enabled: 1
+  m_Texture: {fileID: 2800000, guid: f95219166677eeb4f8ede87df38161b7, type: 3}
+  m_Color: {r: .5, g: .5, b: .5, a: .5}
+  m_PixelInset:
+    serializedVersion: 2
+    x: -180
+    y: -35.5
+    width: 70
+    height: 70
+  m_LeftBorder: 0
+  m_RightBorder: 0
+  m_TopBorder: 0
+  m_BottomBorder: 0
+--- !u!4 &341870439
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 341870437}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .0289003849, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 4.27693558}
+  m_Children: []
+  m_Father: {fileID: 1259480618}
 --- !u!1 &343118514
 GameObject:
   m_ObjectHideFlags: 0
@@ -12700,76 +12746,6 @@ Prefab:
   m_RootGameObject: {fileID: 197650699}
   m_IsPrefabParent: 0
   m_IsExploded: 1
---- !u!1 &345586601
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 345586604}
-  - 23: {fileID: 345586603}
-  - 102: {fileID: 345586602}
-  m_Layer: 0
-  m_Name: New Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!102 &345586602
-TextMesh:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 345586601}
-  m_Text: Score
-  m_OffsetZ: 6.61000013
-  m_CharacterSize: 1
-  m_LineSpacing: 1
-  m_Anchor: 0
-  m_Alignment: 0
-  m_TabSize: 7.09000015
-  m_FontSize: 69
-  m_FontStyle: 0
-  m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 2a3a72fa9a722364e8adbd61e9c003fd, type: 3}
-  m_Color:
-    serializedVersion: 2
-    rgba: 4294967295
---- !u!23 &345586603
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 345586601}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 2a3a72fa9a722364e8adbd61e9c003fd, type: 3}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortingLayerID: 0
---- !u!4 &345586604
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 345586601}
-  m_LocalRotation: {x: .475010008, y: 0, z: 0, w: .879980385}
-  m_LocalPosition: {x: -61.6343155, y: 17.3103371, z: 8.93200779}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2139133039}
 --- !u!1 &347855547
 GameObject:
   m_ObjectHideFlags: 0
@@ -13744,7 +13720,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 368599143}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .5, y: .5, z: 0}
+  m_LocalPosition: {x: .351421356, y: .68239212, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2139133039}
@@ -13756,15 +13732,15 @@ GUIText:
   m_GameObject: {fileID: 368599143}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: warnings?
+  m_Text: CONGRATULATIONS!
   m_Anchor: 0
-  m_Alignment: 0
+  m_Alignment: 1
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: 467cfda7a04856649906f79729d7950b, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 45
+  m_FontSize: 54
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -27010,6 +26986,56 @@ Prefab:
   m_RootGameObject: {fileID: 539489850}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &709386294
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 709386296}
+  - 132: {fileID: 709386295}
+  m_Layer: 0
+  m_Name: Score_title
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!132 &709386295
+GUIText:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 709386294}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: SCORE
+  m_Anchor: 0
+  m_Alignment: 0
+  m_PixelOffset: {x: 180, y: -25}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 12800000, guid: 467cfda7a04856649906f79729d7950b, type: 3}
+  m_Material: {fileID: 0}
+  m_FontSize: 45
+  m_FontStyle: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_PixelCorrect: 1
+  m_RichText: 1
+--- !u!4 &709386296
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 709386294}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2139133039}
 --- !u!1001 &709905141
 Prefab:
   m_ObjectHideFlags: 0
@@ -27815,6 +27841,52 @@ Prefab:
   m_RootGameObject: {fileID: 1617180466}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &733896666
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 733896668}
+  - 131: {fileID: 733896667}
+  m_Layer: 0
+  m_Name: Life_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!131 &733896667
+GUITexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 733896666}
+  m_Enabled: 1
+  m_Texture: {fileID: 2800000, guid: f95219166677eeb4f8ede87df38161b7, type: 3}
+  m_Color: {r: .5, g: .5, b: .5, a: .5}
+  m_PixelInset:
+    serializedVersion: 2
+    x: -131.100006
+    y: -35.5
+    width: 70
+    height: 70
+  m_LeftBorder: 0
+  m_RightBorder: 0
+  m_TopBorder: 0
+  m_BottomBorder: 0
+--- !u!4 &733896668
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 733896666}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.0350456238, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 4.27693558}
+  m_Children: []
+  m_Father: {fileID: 1259480618}
 --- !u!1 &733959494
 GameObject:
   m_ObjectHideFlags: 0
@@ -29244,7 +29316,7 @@ GameObject:
   - 4: {fileID: 768346286}
   - 132: {fileID: 768346287}
   m_Layer: 0
-  m_Name: score_text
+  m_Name: score_number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29257,7 +29329,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 768346285}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: -.931048393, y: -17.591301, z: -8.55944633}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2139133039}
@@ -29269,13 +29341,13 @@ GUIText:
   m_GameObject: {fileID: 768346285}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: score
+  m_Text: 150
   m_Anchor: 0
   m_Alignment: 0
-  m_PixelOffset: {x: 10, y: -10}
+  m_PixelOffset: {x: -60.2000008, y: -10}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: 467cfda7a04856649906f79729d7950b, type: 3}
   m_Material: {fileID: 0}
   m_FontSize: 0
   m_FontStyle: 0
@@ -32721,6 +32793,52 @@ Prefab:
   m_RootGameObject: {fileID: 1322906337}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &853755609
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 853755610}
+  - 131: {fileID: 853755611}
+  m_Layer: 0
+  m_Name: Life_1test
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &853755610
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 853755609}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .870000005, y: .870000005, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 2066350811}
+--- !u!131 &853755611
+GUITexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 853755609}
+  m_Enabled: 1
+  m_Texture: {fileID: 2800000, guid: f95219166677eeb4f8ede87df38161b7, type: 3}
+  m_Color: {r: .5, g: .5, b: .5, a: .5}
+  m_PixelInset:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 70
+    height: 70
+  m_LeftBorder: 0
+  m_RightBorder: 0
+  m_TopBorder: 0
+  m_BottomBorder: 0
 --- !u!1 &855080127
 GameObject:
   m_ObjectHideFlags: 0
@@ -34518,7 +34636,7 @@ GameObject:
   - 23: {fileID: 910262549}
   m_Layer: 0
   m_Name: Big pellet
-  m_TagString: Super Pellet
+  m_TagString: Pellet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36365,6 +36483,52 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1136049769}
   m_GameObject: {fileID: 951401718}
   m_Mesh: {fileID: 4300024, guid: 10b9860a2c52b2c45b2f6d2693813793, type: 3}
+--- !u!1 &953520369
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 953520371}
+  - 131: {fileID: 953520370}
+  m_Layer: 0
+  m_Name: Life_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!131 &953520370
+GUITexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 953520369}
+  m_Enabled: 1
+  m_Texture: {fileID: 2800000, guid: f95219166677eeb4f8ede87df38161b7, type: 3}
+  m_Color: {r: .5, g: .5, b: .5, a: .5}
+  m_PixelInset:
+    serializedVersion: 2
+    x: -187.020004
+    y: -35.5
+    width: 70
+    height: 70
+  m_LeftBorder: 0
+  m_RightBorder: 0
+  m_TopBorder: 0
+  m_BottomBorder: 0
+--- !u!4 &953520371
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 953520369}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .0705032349, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 4.27693558}
+  m_Children: []
+  m_Father: {fileID: 1259480618}
 --- !u!1001 &953822846
 Prefab:
   m_ObjectHideFlags: 0
@@ -47461,6 +47625,35 @@ Prefab:
   m_RootGameObject: {fileID: 1249292154}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1259480617
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1259480618}
+  m_Layer: 0
+  m_Name: Lives
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1259480618
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1259480617}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .911542177, y: .940786362, z: -10.5548592}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 733896668}
+  - {fileID: 341870439}
+  - {fileID: 953520371}
+  m_Father: {fileID: 0}
 --- !u!1 &1260687015
 GameObject:
   m_ObjectHideFlags: 0
@@ -55540,7 +55733,7 @@ GameObject:
   - 23: {fileID: 1495209623}
   m_Layer: 0
   m_Name: Big pellet
-  m_TagString: Super Pellet
+  m_TagString: Pellet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75102,6 +75295,33 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 3, z: 3}
   m_Center: {x: 5.96046448e-08, y: 0, z: -8.94069672e-08}
+--- !u!1 &2066350810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2066350811}
+  m_Layer: 0
+  m_Name: Lives_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2066350811
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2066350810}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 853755610}
+  m_Father: {fileID: 0}
 --- !u!1 &2066377005
 GameObject:
   m_ObjectHideFlags: 0
@@ -79211,7 +79431,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 345586604}
+  - {fileID: 709386296}
   - {fileID: 768346286}
   - {fileID: 368599144}
   m_Father: {fileID: 0}
