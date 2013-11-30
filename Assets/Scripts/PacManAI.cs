@@ -46,7 +46,7 @@ public class PacManAI : MonoBehaviour {
                 } else {
                     _score += other_tag == "Ghost" ? ROBOT_GHOST_POINTS : PERSON_GHOST_POINTS;
                     transform.position = _pacman_start.transform.position;
-                    --_lives;
+                    if (other_tag == "Player") --_lives;
                 }
                     SetCountText();
             }
