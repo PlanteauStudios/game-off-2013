@@ -10784,7 +10784,7 @@ MonoBehaviour:
   _ghost_start: {fileID: 664778671}
   _pacman: {fileID: 943379748}
   _floor: {fileID: 1494009291}
-  _delayed_start: 75
+  _delayed_start: 100
   _pen_mid: {fileID: 751206923}
   _pen_exit: {fileID: 869205587}
   _normal_form: {fileID: 1941727466}
@@ -18738,7 +18738,7 @@ MonoBehaviour:
   _ghost_start: {fileID: 664778671}
   _pacman: {fileID: 943379748}
   _floor: {fileID: 1494009291}
-  _delayed_start: 0
+  _delayed_start: 30
   _pen_mid: {fileID: 751206923}
   _pen_exit: {fileID: 869205587}
   _normal_form: {fileID: 1545065410}
@@ -27576,7 +27576,7 @@ Prefab:
       objectReference: {fileID: 119868233}
     - target: {fileID: 11400000, guid: b4421e7c4c5de854cad0a5e30d291270, type: 2}
       propertyPath: _delayed_start
-      value: 125
+      value: 160
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4421e7c4c5de854cad0a5e30d291270, type: 2}
@@ -32407,7 +32407,7 @@ MonoBehaviour:
   _ghost_start: {fileID: 664778671}
   _pacman: {fileID: 943379748}
   _floor: {fileID: 1494009291}
-  _delayed_start: 125
+  _delayed_start: 160
   _pen_mid: {fileID: 751206923}
   _pen_exit: {fileID: 869205587}
   _normal_form: {fileID: 420715482}
@@ -36291,6 +36291,7 @@ MonoBehaviour:
   _player: {fileID: 1063702530}
   _pacman_start: {fileID: 1004258059}
   _ghosts: {fileID: 1400291333}
+  _delayed_start: 50
   _open_face: {fileID: 1274351020}
   _closed_face: {fileID: 83768633}
 --- !u!1001 &948589003
@@ -39159,7 +39160,7 @@ Prefab:
       objectReference: {fileID: 1860999690}
     - target: {fileID: 11400000, guid: b4421e7c4c5de854cad0a5e30d291270, type: 2}
       propertyPath: _delayed_start
-      value: 75
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4421e7c4c5de854cad0a5e30d291270, type: 2}
@@ -79563,6 +79564,10 @@ Prefab:
       propertyPath: _vulnerable_form
       value: 
       objectReference: {fileID: 1095346579}
+    - target: {fileID: 11400000, guid: b4421e7c4c5de854cad0a5e30d291270, type: 2}
+      propertyPath: _delayed_start
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4421e7c4c5de854cad0a5e30d291270, type: 2}
   m_RootGameObject: {fileID: 500294814}

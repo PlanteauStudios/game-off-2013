@@ -14,6 +14,9 @@ public class PacManAI : MonoBehaviour {
     public GameObject _pacman_start;
     public GameObject _ghosts;
 
+    public int _delayed_start;
+    private int _wait = 0;
+
     private const int STARTING_SCORE = 500;
     private const int PELLET_POINTS = 1;
     private const int ROBOT_GHOST_POINTS = 5;
@@ -84,6 +87,10 @@ public class PacManAI : MonoBehaviour {
         }
     }
     void FixedUpdate () {
+        if (_wait <= _delayed_start) {
+            ++_wait;
+            return;
+        }
         Quaternion rot = Quaternion.identity;
         rot.eulerAngles = new Vector3(270.0f, 0.0f, 0.0f);
         rigidbody.velocity = Movement.MoveDirection(_direction) * _speed;
