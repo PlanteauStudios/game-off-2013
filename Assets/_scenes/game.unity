@@ -36287,8 +36287,8 @@ MonoBehaviour:
   _score_text: {fileID: 768346287}
   _win_text: {fileID: 368599145}
   _score: 0
-  _lives: 5
-  _player: {fileID: 0}
+  _lives: 3
+  _player: {fileID: 1063702530}
   _pacman_start: {fileID: 1004258059}
   _ghosts: {fileID: 1400291333}
   _open_face: {fileID: 1274351020}
