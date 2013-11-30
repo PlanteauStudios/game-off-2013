@@ -44,7 +44,7 @@ public class PacManAI : MonoBehaviour {
             string other_tag = other.collider.gameObject.tag;
             if (other_tag == "Ghost" || other_tag == "Player") {
                 GhostAI g_ai = other.collider.gameObject.GetComponent<GhostAI>();
-                if (true || g_ai.IsVulnerable()) {
+                if (g_ai.IsVulnerable()) {
                     _score -= other_tag == "Ghost" ? ROBOT_GHOST_POINTS : PERSON_GHOST_POINTS;
                     if (other_tag == "Player") {
                         PlayerController pc = other.collider.gameObject.GetComponent<PlayerController>();
