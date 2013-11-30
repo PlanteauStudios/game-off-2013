@@ -225,7 +225,6 @@ GameObject:
   - 33: {fileID: 41329327}
   - 23: {fileID: 41329326}
   - 95: {fileID: 41329325}
-  - 64: {fileID: 41329324}
   - 65: {fileID: 41329323}
   m_Layer: 0
   m_Name: Wall_middle
@@ -247,20 +246,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.98340392, y: 1.62933397, z: 3.90579414}
   m_Center: {x: -.0201890171, y: 0, z: -.758112967}
---- !u!64 &41329324
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 9ba478a6bc5be8f46a6d1f8ae2af4f31,
-    type: 2}
-  m_PrefabInternal: {fileID: 13363268}
-  m_GameObject: {fileID: 41329322}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 4968ec7b6c880cc4a941ec3be1a27db6, type: 3}
 --- !u!95 &41329325
 Animator:
   serializedVersion: 2
@@ -780,7 +765,6 @@ GameObject:
   - 33: {fileID: 400803261}
   - 23: {fileID: 400803260}
   - 95: {fileID: 400803259}
-  - 64: {fileID: 400803258}
   - 65: {fileID: 400803257}
   m_Layer: 0
   m_Name: Wall_middle
@@ -802,20 +786,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.98340392, y: 1.62933397, z: 3.90579414}
   m_Center: {x: -.0201890171, y: 0, z: -.758112967}
---- !u!64 &400803258
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 9ba478a6bc5be8f46a6d1f8ae2af4f31,
-    type: 2}
-  m_PrefabInternal: {fileID: 1090331675}
-  m_GameObject: {fileID: 400803256}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 4968ec7b6c880cc4a941ec3be1a27db6, type: 3}
 --- !u!95 &400803259
 Animator:
   serializedVersion: 2
@@ -1177,7 +1147,6 @@ GameObject:
   - 33: {fileID: 883547727}
   - 23: {fileID: 883547726}
   - 95: {fileID: 883547725}
-  - 64: {fileID: 883547724}
   - 65: {fileID: 883547723}
   m_Layer: 0
   m_Name: Wall_middle
@@ -1199,20 +1168,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.98340392, y: 1.62933397, z: 3.90579414}
   m_Center: {x: -.0201890171, y: 0, z: -.758112967}
---- !u!64 &883547724
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 9ba478a6bc5be8f46a6d1f8ae2af4f31,
-    type: 2}
-  m_PrefabInternal: {fileID: 12534839}
-  m_GameObject: {fileID: 883547722}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 4968ec7b6c880cc4a941ec3be1a27db6, type: 3}
 --- !u!95 &883547725
 Animator:
   serializedVersion: 2
@@ -3012,6 +2967,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1741874222}
   - 131: {fileID: 1741874221}
+  - 114: {fileID: 1741874223}
   m_Layer: 0
   m_Name: Menu
   m_TagString: Untagged
@@ -3049,6 +3005,18 @@ Transform:
   m_LocalScale: {x: .58321017, y: .728730679, z: 1.36205578}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &1741874223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1741874220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6af1be6994319bf46a07a72328c0b967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  btnTexture: {fileID: 0}
 --- !u!1 &1746457184
 GameObject:
   m_ObjectHideFlags: 0
