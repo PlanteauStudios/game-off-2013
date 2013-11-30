@@ -22,8 +22,6 @@ public class GhostAI : MonoBehaviour {
     }
 
     void OnCollisionEnter(Collision other) {
-        // Debug.Log("Bump");
-        // rigidbody.velocity = Vector3.zero;
         if (other.collider.gameObject.tag == "Floor") return;
 
         if (other.collider.gameObject.tag == "Ghost")
