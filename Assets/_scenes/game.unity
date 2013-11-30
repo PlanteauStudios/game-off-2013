@@ -24181,7 +24181,11 @@ Prefab:
       objectReference: {fileID: 151260235}
     - target: {fileID: 100000, guid: b4421e7c4c5de854cad0a5e30d291270, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b4421e7c4c5de854cad0a5e30d291270, type: 2}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4421e7c4c5de854cad0a5e30d291270, type: 2}
@@ -36165,6 +36169,7 @@ MonoBehaviour:
   _score_text: {fileID: 768346287}
   _win_text: {fileID: 368599145}
   _score: 0
+  _lives: 5
   _player: {fileID: 0}
   _pacman_start: {fileID: 1004258059}
   _ghosts: {fileID: 1400291333}
@@ -40115,11 +40120,11 @@ GameObject:
   - 114: {fileID: 1063702537}
   m_Layer: 0
   m_Name: player_ghost
-  m_TagString: Ghost
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1063702531
 Transform:
   m_ObjectHideFlags: 0
