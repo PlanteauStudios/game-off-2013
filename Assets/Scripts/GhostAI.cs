@@ -11,6 +11,8 @@ public class GhostAI : MonoBehaviour {
     private int _wait = 0;
     public GameObject _pen_mid, _pen_exit;
 
+    public GameObject _starting_pos;
+
     public GameObject _normal_form, _vulnerable_form;
     private bool _vulnerable = false;
     public int VULNERABLE_TIMER;
@@ -90,6 +92,7 @@ public class GhostAI : MonoBehaviour {
     }
     public void Reset() {
         _starting_position = true; _starting_area = true;
+        transform.position = _starting_pos.transform.position;
         _wait = 0;
     }
     public void SetVulnerable() {

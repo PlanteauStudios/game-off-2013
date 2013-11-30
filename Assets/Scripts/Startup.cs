@@ -57,10 +57,8 @@ public class Startup : MonoBehaviour {
                 gai.Reset();
                 if (t.gameObject.tag == "Player") {
                     PlayerController pc = t.gameObject.GetComponent<PlayerController>();
-                    t.gameObject.transform.position = _player_start_pos.transform.position;
                     pc.Reset();
-                } else
-                    t.gameObject.transform.position = gai._ghost_start.transform.position;
+                }
             }
         }
         _finished = false;
