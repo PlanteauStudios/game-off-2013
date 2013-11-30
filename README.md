@@ -6,7 +6,7 @@ Once upon a time, little Shadow, Speedy, Bashful, Pokey and Pacboy were best fri
 
 Over the years, Shadow, Speedy, Bashful and Pokey have grown tired of it, annoyed, angry. Now, **it has to change!** Help them bring down Pacman. Help them be the best tag players in the history of...tag!
 
-Go, GO! [Bring fairness to this world](http://planteaustudios.github.io/game-off-2013)! 
+Go, GO! [Bring fairness to this world](http://planteaustudios.github.io/game-off-2013/index.html)! 
 
 # Gameplay
 
