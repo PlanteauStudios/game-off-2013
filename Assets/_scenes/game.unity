@@ -10840,7 +10840,7 @@ MonoBehaviour:
   _pen_exit: {fileID: 869205587}
   _normal_form: {fileID: 1941727466}
   _vulnerable_form: {fileID: 1860999690}
-  VULNERABLE_TIMER: 10000
+  VULNERABLE_TIMER: 100
   _player: 0
   _starting_position: 1
   _starting_area: 1
@@ -10916,7 +10916,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -18855,7 +18855,7 @@ MonoBehaviour:
   _pen_exit: {fileID: 869205587}
   _normal_form: {fileID: 1545065410}
   _vulnerable_form: {fileID: 1095346579}
-  VULNERABLE_TIMER: 10000
+  VULNERABLE_TIMER: 100
   _player: 0
   _starting_position: 1
   _starting_area: 1
@@ -18957,7 +18957,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -32601,7 +32601,7 @@ MonoBehaviour:
   _pen_exit: {fileID: 869205587}
   _normal_form: {fileID: 420715482}
   _vulnerable_form: {fileID: 119868233}
-  VULNERABLE_TIMER: 10000
+  VULNERABLE_TIMER: 100
   _player: 0
   _starting_position: 1
   _starting_area: 1
@@ -40660,7 +40660,7 @@ MonoBehaviour:
   _pen_exit: {fileID: 869205587}
   _normal_form: {fileID: 2032540918}
   _vulnerable_form: {fileID: 151260235}
-  VULNERABLE_TIMER: 10000
+  VULNERABLE_TIMER: 100
   _player: 1
   _starting_position: 1
   _starting_area: 1
@@ -40752,7 +40752,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -66381,6 +66381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7706cf768de9b2548aadcdc90e82722d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!82 &1786608480
 AudioSource:
   m_ObjectHideFlags: 0
