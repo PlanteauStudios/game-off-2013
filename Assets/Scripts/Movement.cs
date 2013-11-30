@@ -74,7 +74,11 @@ public class Movement {
             current_direction = next_direction;
         }
     }
+
     public static bool CollisionIn(Direction dir, Vector3 current_position) {
+        return  CollisionIn(dir, current_position, "Wall");
+    }
+    public static bool CollisionIn(Direction dir, Vector3 current_position, string other_tag) {
         Vector3 attempted_direction = MoveDirection(dir);
         Ray ray = new Ray(current_position, attempted_direction);
         RaycastHit hit;

@@ -27,8 +27,9 @@ public class GhostAI : MonoBehaviour {
         if (_player) return;
         if (other.collider.gameObject.tag == "Floor") return;
 
-        if (other.collider.gameObject.tag == "Ghost")
-            Movement.Reverse(ref _direction);
+    }
+    bool InFrontOf(Collider other) {
+        return Movement.CollisionIn(_direction, transform.position, other.collider.tag);
     }
     void OnTriggerEnter(Collider other) {
         if (_player) return;
@@ -46,7 +47,8 @@ public class GhostAI : MonoBehaviour {
             if (_direction == Movement.Direction.Down) {
                 _direction = Movement.Direction.Left;
             }
-        } else if (other.gameObject.tag == "Ghost") {
+        } else if ((other.collider.gameObject.tag == "Ghost" || other.collider.gameObject.tag == "Player") &&
+                    InFrontOf(other)) {
             Movement.Reverse(ref _direction);
         } else {
             Movement.SwitchDirection(Movement.Randomize(), 0, transform.position, ref _direction);
@@ -58,7 +60,8 @@ public class GhostAI : MonoBehaviour {
             if (_direction == Movement.Direction.Down) {
                 _direction = Movement.Direction.Left;
             }
-        } else if (other.gameObject.tag == "Ghost") {
+        } else if ((other.collider.gameObject.tag == "Ghost" || other.collider.gameObject.tag == "Player") &&
+                    InFrontOf(other)) {
             Movement.Reverse(ref _direction);
         }
     }
