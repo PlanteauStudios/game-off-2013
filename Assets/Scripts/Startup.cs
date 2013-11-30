@@ -31,7 +31,7 @@ public class Startup : MonoBehaviour {
         }
         if (_finished) {
             if (Input.anyKeyDown) {
-                ResetAll();
+                // ResetAll();
             }
         }
 	}
