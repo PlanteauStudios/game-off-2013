@@ -8,7 +8,10 @@ public class PacManAI : MonoBehaviour {
 
     public GUIText _score_text, _win_text;
     public int _score;
+
+    public GameObject _life_icons;
     public int _lives;
+
     private Movement.Direction _direction;
     public GameObject _player;
     public GameObject _pacman_start;
@@ -28,14 +31,12 @@ public class PacManAI : MonoBehaviour {
     public GameObject _closed_face;
 
 
-	// Use this for initialization
 	void Start () {
         _direction = Movement.Direction.Up;
         _score = STARTING_SCORE;
         SetCountText();
 	}
 
-	// Update is called once per frame
 
     void OnCollisionEnter(Collision other) {
         if (other.collider.gameObject.tag == "Floor") return;
@@ -49,7 +50,7 @@ public class PacManAI : MonoBehaviour {
                 } else {
                     _score += other_tag == "Ghost" ? ROBOT_GHOST_POINTS : PERSON_GHOST_POINTS;
                     transform.position = _pacman_start.transform.position;
-                    if (other_tag == "Player") --_lives;
+                    if (other_tag == "Player") LoseLife();
                 }
                     SetCountText();
             }
@@ -74,6 +75,21 @@ public class PacManAI : MonoBehaviour {
             }
         } else {
                 Movement.SwitchDirection(Movement.Randomize(), 0, transform.position, ref _direction);
+        }
+    }
+
+    void LoseLife() {
+        if (_lives > 0) {
+            Transform[] icons = _life_icons.GetComponentsInChildren<Transform>();
+            for (int i = icons.Length - 1; i >= 0; --i) {
+                if (icons[i].gameObject.tag == "Life") {
+                    if (icons[i].gameObject.activeInHierarchy) {
+                        icons[i].gameObject.SetActive(false);
+                        break;
+                    }
+                }
+            }
+            --_lives;
         }
     }
     void SetCountText() {

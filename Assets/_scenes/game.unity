@@ -12493,7 +12493,7 @@ GameObject:
   - 131: {fileID: 341870438}
   m_Layer: 0
   m_Name: Life_2
-  m_TagString: Untagged
+  m_TagString: Life
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27892,7 +27892,7 @@ GameObject:
   - 131: {fileID: 733896667}
   m_Layer: 0
   m_Name: Life_1
-  m_TagString: Untagged
+  m_TagString: Life
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36287,6 +36287,7 @@ MonoBehaviour:
   _score_text: {fileID: 768346287}
   _win_text: {fileID: 368599145}
   _score: 0
+  _life_icons: {fileID: 1259480617}
   _lives: 3
   _player: {fileID: 1063702530}
   _pacman_start: {fileID: 1004258059}
@@ -36536,7 +36537,7 @@ GameObject:
   - 131: {fileID: 953520370}
   m_Layer: 0
   m_Name: Life_3
-  m_TagString: Untagged
+  m_TagString: Life
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
