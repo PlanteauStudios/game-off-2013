@@ -5,3 +5,19 @@ Once upon a time, little Shadow, Speedy, Bashful, Pokey and Pacboy were best fri
 For all those years, Shadow, Speedy, Bashful and Pokey have grown tired of it, annoyed, angry. **Now, it has to change!** Help them bring down Pacman. Help them be the best tag players in the history of...tag!
 
 Go, GO! [Bring fairness to this world](http://planteaustudios.github.io/game-off-2013)! 
+
+# Gameplay
+
+You control Speedy (or Pinky, or Machibusem, or 待ち伏… May we never forget his names!). ![alt text](https://github.com/PlanteauStudios/game-off-2013/blob/master/Speedy.png "Speedy")
+
+Catch Pacman 3 times to win. The faster you catch him, the lower his score is!
+
+# Controls
+
+Use the ![alt text](https://github.com/PlanteauStudios/game-off-2013/blob/master/arrow%20keys.png "Arrow keys")  to move around the maze. 
+
+# Credits
+
+[Graham Saulnier](https://github.com/boumbles) – Code
+
+[Eloïse Vignola](https://github.com/Erevu) – Graphics, sounds
