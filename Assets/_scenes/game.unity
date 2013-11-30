@@ -12493,7 +12493,7 @@ GameObject:
   - 131: {fileID: 341870438}
   m_Layer: 0
   m_Name: Life_2
-  m_TagString: Untagged
+  m_TagString: Life
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27892,7 +27892,7 @@ GameObject:
   - 131: {fileID: 733896667}
   m_Layer: 0
   m_Name: Life_1
-  m_TagString: Untagged
+  m_TagString: Life
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36287,6 +36287,7 @@ MonoBehaviour:
   _score_text: {fileID: 768346287}
   _win_text: {fileID: 368599145}
   _score: 0
+  _life_icons: {fileID: 1259480617}
   _lives: 3
   _player: {fileID: 1063702530}
   _pacman_start: {fileID: 1004258059}
@@ -36536,7 +36537,7 @@ GameObject:
   - 131: {fileID: 953520370}
   m_Layer: 0
   m_Name: Life_3
-  m_TagString: Untagged
+  m_TagString: Life
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55745,14 +55746,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1494009291}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 302a42655c62a3b4c8a4cd2270d50b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: 0
-  vertexList: []
-  _pacman: {fileID: 0}
+  _life_icons: {fileID: 1259480617}
 --- !u!114 &1494009297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65930,7 +65929,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1786608473}
   m_LocalRotation: {x: .438371152, y: 0, z: 0, w: .898794055}
-  m_LocalPosition: {x: 0, y: 35.7518463, z: -53.0564308}
+  m_LocalPosition: {x: 0, y: 48.3220215, z: -62.8773232}
   m_LocalScale: {x: .0149254827, y: .349212885, z: .143196166}
   m_Children: []
   m_Father: {fileID: 0}

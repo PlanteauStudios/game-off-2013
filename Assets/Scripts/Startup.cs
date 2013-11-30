@@ -1,37 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
-
 public class Startup : MonoBehaviour {
-    public float height;
-    public Vector3[] vertexList;
-    public GameObject _pacman;
-    private bool initialize;
-	// Use this for initialization
-	void Start () {
-        initialize = false;
-	}
-
-	// Update is called once per frame
-	void Update () {
-        if (!initialize) {
-            GenerateMaze();
-            initialize = true;
+    public GameObject _life_icons;
+    private Rect fullscreen;
+	void OnGUI () {
+        fullscreen = new Rect (0, 0, Screen.width, Screen.height);
+        Transform[] icons = _life_icons.GetComponentsInChildren<Transform>();
+        int count = 0;
+        foreach(Transform t in icons) {
+            if (t.gameObject.tag == "Life") {
+                GUITexture g = t.gameObject.GetComponent<GUITexture>();
+                // g.transform.position = new Vector3(-130f + 20 * count, -35.5f, -35.5f);
+                g.transform.position = new Vector3(0f, 0f, 0f);
+                g.pixelInset = new Rect(Screen.width - (100 + count * 75), Screen.height - 75, 70, 70);//fullscreen;
+                ++count;
+            }
         }
-        // NodeScorer ns = GetComponent<NodeScorer>();
-        // ns.GenerateScores(_pacman);
 	}
-    void GenerateMaze() {
-        // Debug.Log("GenerateMaze");
-        GridManager grid = GetComponent<GridManager>();
-        // Debug.Log("Building grid");
-        grid.Build();
-        // Debug.Log("Building grid complet");
-        NodeScorer ns = GetComponent<NodeScorer>();
-        // Debug.Log("Initializing NodeScorer");
-        ns.Initialize(ref grid);
-        // Debug.Log("Initializing NodeScorer Complete");
-        // Debug.Log("Generating Scores");
-        ns.GenerateScores(_pacman);
-        // Debug.Log("Generating Scores Complete");
-    }
 }
