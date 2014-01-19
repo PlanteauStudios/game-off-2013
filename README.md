@@ -22,6 +22,6 @@ Use the ![alt text](arrow keys.png "Arrow keys")  to move around the maze.
 
 [Graham Saulnier](https://github.com/boumbles) – Code
 
-[Eloïse Vignola](https://github.com/Erevu) – Concept, graphics, music*
+[Eloïse Vignola](https://github.com/Erevu) – Concept, graphics
 
-*Modified from Pacman theme song
+
